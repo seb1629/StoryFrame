@@ -12,14 +12,10 @@ class SecondViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        tabBarItem.selectedImage = UIImage(named: "For You")!.imageWithRenderingMode(.AlwaysOriginal)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+ 
 
 }
 
