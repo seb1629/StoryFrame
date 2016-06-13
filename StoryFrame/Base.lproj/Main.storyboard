@@ -31,7 +31,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.49063824449999999" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
                             <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="cfb-er-3JN"/>
@@ -71,7 +71,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.45882352939999999" green="0.59999999999999998" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
                             <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
@@ -109,13 +109,6 @@
                                         <color key="textColor" red="0.60784313725490191" green="0.18431372549019609" blue="0.68235294117647061" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CameraImg" translatesAutoresizingMaskIntoConstraints="NO" id="vtl-ti-Zg5">
-                                        <rect key="frame" x="257" y="270" width="87" height="69"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="69" id="aui-9n-tXd"/>
-                                            <constraint firstAttribute="width" constant="87" id="lSC-JS-vhc"/>
-                                        </constraints>
-                                    </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C0D-cP-hJJ">
                                         <rect key="frame" x="199" y="376" width="202" height="3"/>
                                         <color key="backgroundColor" red="0.60784313729999995" green="0.1843137255" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -124,13 +117,23 @@
                                             <constraint firstAttribute="height" constant="3" id="fIb-ON-h6R"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qe4-VD-Ymb">
+                                        <rect key="frame" x="257" y="270" width="87" height="69"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="87" id="Dw3-ru-4k9"/>
+                                        </constraints>
+                                        <state key="normal" image="CameraImg"/>
+                                        <connections>
+                                            <action selector="onCameraTapped:" destination="lOT-Jj-NW3" eventType="touchUpInside" id="sTy-ij-7fc"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.396078431372549" green="0.71372549019607845" blue="1" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="vtl-ti-Zg5" firstAttribute="top" secondItem="gFD-Tu-NpM" secondAttribute="bottom" constant="26" id="14m-ix-Ug5"/>
+                                    <constraint firstItem="Qe4-VD-Ymb" firstAttribute="top" secondItem="gFD-Tu-NpM" secondAttribute="bottom" constant="26" id="IWt-Kw-Hdv"/>
+                                    <constraint firstItem="Qe4-VD-Ymb" firstAttribute="centerX" secondItem="Fd7-ae-iPh" secondAttribute="centerX" id="Sxt-pp-HPD"/>
+                                    <constraint firstItem="C0D-cP-hJJ" firstAttribute="top" secondItem="Qe4-VD-Ymb" secondAttribute="bottom" constant="37" id="aSr-PT-gZZ"/>
                                     <constraint firstItem="gFD-Tu-NpM" firstAttribute="top" secondItem="Fd7-ae-iPh" secondAttribute="top" constant="190" id="dGi-M9-grn"/>
-                                    <constraint firstItem="C0D-cP-hJJ" firstAttribute="top" secondItem="vtl-ti-Zg5" secondAttribute="bottom" constant="37" id="f9P-fW-13T"/>
-                                    <constraint firstItem="vtl-ti-Zg5" firstAttribute="centerX" secondItem="Fd7-ae-iPh" secondAttribute="centerX" id="li4-el-hcb"/>
                                     <constraint firstItem="gFD-Tu-NpM" firstAttribute="centerX" secondItem="Fd7-ae-iPh" secondAttribute="centerX" id="mXF-R7-yqj"/>
                                     <constraint firstItem="C0D-cP-hJJ" firstAttribute="centerX" secondItem="Fd7-ae-iPh" secondAttribute="centerX" id="tH9-Jv-SoZ"/>
                                 </constraints>
@@ -149,6 +152,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="b8h-vM-6zH"/>
+                    <connections>
+                        <segue destination="49e-Tb-3d3" kind="show" identifier="loginSegue" id="skp-Nk-6Yg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8nO-DE-w0c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

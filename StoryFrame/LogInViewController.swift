@@ -20,6 +20,11 @@ class LogInViewController: UIViewController {
         navigationController?.navigationBarHidden = true
     }
     
+    @IBAction func onCameraTapped(sender: AnyObject) {
+        performSegueWithIdentifier("loginSegue", sender: self)
+    }
+  
+    
 
 
 }
