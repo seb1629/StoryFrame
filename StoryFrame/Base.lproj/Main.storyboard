@@ -92,6 +92,9 @@
                                                             <state key="normal" title="Delete">
                                                                 <color key="titleColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="onDeletePressed:" destination="Rox-w0-fxH" eventType="touchUpInside" id="6fX-jk-FJw"/>
+                                                            </connections>
                                                         </button>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-3" translatesAutoresizingMaskIntoConstraints="NO" id="IPC-c7-wCd">
                                                             <rect key="frame" x="84" y="0.0" width="406" height="33"/>
@@ -145,12 +148,40 @@
                                                 <constraint firstItem="UkB-Qy-w5V" firstAttribute="top" secondItem="zw1-hT-H2d" secondAttribute="top" id="lGc-2H-2fX"/>
                                             </constraints>
                                         </view>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BGMain" translatesAutoresizingMaskIntoConstraints="NO" id="rB2-4f-01g" customClass="roundedImage" customModule="StoryFrame" customModuleProvider="target">
+                                            <rect key="frame" x="220" y="327" width="160" height="160"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="160" id="oxy-dD-hXw"/>
+                                                <constraint firstAttribute="height" constant="160" id="qgp-T8-uwS"/>
+                                            </constraints>
+                                        </imageView>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Tap the camera icon to create a post" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="SOz-A4-KM5">
+                                            <rect key="frame" x="30" y="127" width="540" height="110"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="110" id="ymJ-I0-IOa"/>
+                                            </constraints>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="30"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="rB2-4f-01g" firstAttribute="centerY" secondItem="xbZ-yI-crJ" secondAttribute="centerY" id="8hU-zC-iH1"/>
                                         <constraint firstItem="zw1-hT-H2d" firstAttribute="top" secondItem="xbZ-yI-crJ" secondAttribute="top" constant="64" id="DvM-ru-nSh"/>
+                                        <constraint firstItem="rB2-4f-01g" firstAttribute="centerX" secondItem="xbZ-yI-crJ" secondAttribute="centerX" id="FXp-OK-y2N"/>
                                         <constraint firstAttribute="trailing" secondItem="zw1-hT-H2d" secondAttribute="trailing" id="HOw-y8-nZ7"/>
+                                        <constraint firstItem="SOz-A4-KM5" firstAttribute="top" secondItem="zw1-hT-H2d" secondAttribute="bottom" constant="30" id="IAn-iv-Af8"/>
                                         <constraint firstItem="zw1-hT-H2d" firstAttribute="leading" secondItem="xbZ-yI-crJ" secondAttribute="leading" id="VTh-DS-pUm"/>
+                                        <constraint firstItem="SOz-A4-KM5" firstAttribute="leading" secondItem="xbZ-yI-crJ" secondAttribute="leading" constant="30" id="gQH-DY-ZMh"/>
+                                        <constraint firstItem="rB2-4f-01g" firstAttribute="top" secondItem="SOz-A4-KM5" secondAttribute="bottom" constant="90" id="gUa-Mj-LuM"/>
+                                        <constraint firstAttribute="trailing" secondItem="SOz-A4-KM5" secondAttribute="trailing" constant="30" id="rj5-Vo-Fvc"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="8hU-zC-iH1"/>
+                                        </mask>
+                                    </variation>
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
@@ -183,8 +214,12 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="background" destination="PoA-fn-BRZ" id="1kz-uX-VOr"/>
+                        <outlet property="currentImage" destination="rB2-4f-01g" id="GjQ-If-kXH"/>
+                        <outlet property="datePhotoTaken" destination="zvZ-DX-HLX" id="y84-6o-xbh"/>
+                        <outlet property="instructionTextView" destination="SOz-A4-KM5" id="iiY-1H-wPm"/>
                         <outlet property="locationView" destination="zw1-hT-H2d" id="dK6-CS-mij"/>
                         <outlet property="openCamera" destination="8Zl-Ya-1CL" id="rCO-mf-ZaH"/>
+                        <outlet property="photoLocationLabel" destination="soM-sZ-W31" id="8Fq-xU-jq4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uqG-Gw-uBe" userLabel="First Responder" sceneMemberID="firstResponder"/>

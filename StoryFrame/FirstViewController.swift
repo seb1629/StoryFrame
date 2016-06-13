@@ -20,7 +20,16 @@ class FirstViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        //Custom Title nav bar
+        setupNavBar()
+       
+    }
+
+ 
+    @IBAction func onCreateCardTapped(sender: AnyObject) {
+        performSegueWithIdentifier("addSegue", sender: self)
+    }
+  
+    func setupNavBar(){
         let label: UILabel = UILabel(frame: CGRectMake(0, 0, 120, 50))
         label.backgroundColor = UIColor.clearColor()
         label.numberOfLines = 2
@@ -30,17 +39,8 @@ class FirstViewController: UIViewController{
         label.textColor = titleNavColor
         label.text = "StoryFrame\n My Cards"
         self.tabBarController?.navigationItem.titleView = label
-        
         self.tabBarController?.navigationItem.rightBarButtonItem = createCard
-       
     }
-
- 
-    @IBAction func onCreateCardTapped(sender: AnyObject) {
-        performSegueWithIdentifier("addSegue", sender: self)
-    }
-  
-        
     
 }
 

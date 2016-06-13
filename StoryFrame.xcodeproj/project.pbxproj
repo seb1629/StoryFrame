@@ -17,6 +17,7 @@
 		32CB25EA1D0E51030065442B /* ScaleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CB25E91D0E51030065442B /* ScaleImage.swift */; };
 		32D742761D0E712500C4E616 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D742751D0E712500C4E616 /* Constants.swift */; };
 		32D7427C1D0ECB7600C4E616 /* CreateCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D7427B1D0ECB7600C4E616 /* CreateCardViewController.swift */; };
+		32D7427E1D0EFE8200C4E616 /* roundedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D7427D1D0EFE8200C4E616 /* roundedImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		32CB25E91D0E51030065442B /* ScaleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaleImage.swift; sourceTree = "<group>"; };
 		32D742751D0E712500C4E616 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		32D7427B1D0ECB7600C4E616 /* CreateCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCardViewController.swift; sourceTree = "<group>"; };
+		32D7427D1D0EFE8200C4E616 /* roundedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = roundedImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				32CB25E91D0E51030065442B /* ScaleImage.swift */,
+				32D7427D1D0EFE8200C4E616 /* roundedImage.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32CB25E51D0E4EF30065442B /* LogInViewController.swift in Sources */,
+				32D7427E1D0EFE8200C4E616 /* roundedImage.swift in Sources */,
 				32CB25D51D0E4E340065442B /* SecondViewController.swift in Sources */,
 				32D7427C1D0ECB7600C4E616 /* CreateCardViewController.swift in Sources */,
 				32CB25EA1D0E51030065442B /* ScaleImage.swift in Sources */,
