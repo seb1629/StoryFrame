@@ -8,10 +8,11 @@
 
 import UIKit
 
-class CreateCardViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class CreateCardViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate, UIPopoverControllerDelegate {
 
     @IBOutlet weak var openCamera: UIBarButtonItem!
     var imagePicker: UIImagePickerController!
+ 
     
     @IBOutlet weak var locationView: UIView!
     @IBOutlet weak var background: UIImageView!
