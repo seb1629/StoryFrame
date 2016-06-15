@@ -12,7 +12,7 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
 
     @IBOutlet weak var openCamera: UIBarButtonItem!
     var imagePicker: UIImagePickerController!
- 
+    var cameraViewController: UIImagePickerController!
     
     @IBOutlet weak var locationView: UIView!
     @IBOutlet weak var background: UIImageView!
@@ -28,8 +28,8 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
         transparentNavBar()
         customRightBarButton()
         
-        
-        
+        cameraViewController = UIImagePickerController()
+        cameraViewController.delegate = self
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
        //setupLayer()
@@ -86,12 +86,13 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
         
         
         let cameraAction = UIAlertAction(title: "Camera", style: .Default) { UIAlertAction in
-            //need to implement camera
-            print("it worked")
+            
+           self.presentViewController(self.cameraViewController, animated: true, completion: nil)
         }
         
         let photoGalleryAction = UIAlertAction(title: "Photo Library", style: .Default) { UIAlertAction in
             self.presentViewController(self.imagePicker, animated: true, completion: nil)
+            
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { UIAlertAction in
@@ -107,7 +108,16 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     
-    
+    //func for camera
+    func onCameraPressed(){
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera){
+            let cameraViewController = UIImagePickerController()
+            cameraViewController.sourceType = UIImagePickerControllerSourceType.Camera
+            cameraViewController.delegate = self
+            
+            self.presentViewController(cameraViewController, animated: true, completion: nil)
+        }
+    }
     
     
     
@@ -116,9 +126,13 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
 
     //func for imagepicker
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
-        imagePicker.dismissViewControllerAnimated(true, completion: nil)
-        currentImage.image = image
-    }
+        
+            imagePicker.dismissViewControllerAnimated(true, completion: nil)
+            currentImage.image = image
+       
+        }
+        
+    
     
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
