@@ -149,7 +149,7 @@
                                             </constraints>
                                         </view>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BGMain" translatesAutoresizingMaskIntoConstraints="NO" id="rB2-4f-01g" customClass="roundedImage" customModule="StoryFrame" customModuleProvider="target">
-                                            <rect key="frame" x="220" y="327" width="160" height="160"/>
+                                            <rect key="frame" x="220" y="317" width="160" height="160"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="160" id="oxy-dD-hXw"/>
                                                 <constraint firstAttribute="height" constant="160" id="qgp-T8-uwS"/>
@@ -174,7 +174,7 @@
                                         <constraint firstItem="SOz-A4-KM5" firstAttribute="top" secondItem="zw1-hT-H2d" secondAttribute="bottom" constant="30" id="IAn-iv-Af8"/>
                                         <constraint firstItem="zw1-hT-H2d" firstAttribute="leading" secondItem="xbZ-yI-crJ" secondAttribute="leading" id="VTh-DS-pUm"/>
                                         <constraint firstItem="SOz-A4-KM5" firstAttribute="leading" secondItem="xbZ-yI-crJ" secondAttribute="leading" constant="30" id="gQH-DY-ZMh"/>
-                                        <constraint firstItem="rB2-4f-01g" firstAttribute="top" secondItem="SOz-A4-KM5" secondAttribute="bottom" constant="90" id="gUa-Mj-LuM"/>
+                                        <constraint firstItem="rB2-4f-01g" firstAttribute="top" secondItem="SOz-A4-KM5" secondAttribute="bottom" constant="80" id="gUa-Mj-LuM"/>
                                         <constraint firstAttribute="trailing" secondItem="SOz-A4-KM5" secondAttribute="trailing" constant="30" id="rj5-Vo-Fvc"/>
                                     </constraints>
                                     <variation key="default">

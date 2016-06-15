@@ -40,7 +40,7 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     @IBAction func onCameraTapped(sender: AnyObject) {
-        presentViewController(imagePicker, animated: true, completion: nil)
+        alertPopup()
     }
     
     @IBAction func onDeletePressed(sender: UIButton) {
@@ -80,6 +80,39 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
 //        currentImage.layer.shadowPath = UIBezierPath(rect: currentImage.bounds).CGPath
 //    }
     
+    
+    func alertPopup(){
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+        
+        
+        let cameraAction = UIAlertAction(title: "Camera", style: .Default) { UIAlertAction in
+            //need to implement camera
+            print("it worked")
+        }
+        
+        let photoGalleryAction = UIAlertAction(title: "Photo Library", style: .Default) { UIAlertAction in
+            self.presentViewController(self.imagePicker, animated: true, completion: nil)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { UIAlertAction in
+            alert.dismissViewControllerAnimated(true, completion: nil)
+        }
+        
+        alert.addAction(cameraAction)
+        alert.addAction(photoGalleryAction)
+        alert.addAction(cancelAction)
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+        alert.view.tintColor = UIColor(red: 101/255, green: 182/255, blue: 255/255, alpha: 1.0)
+    }
+    
+    
+    
+    
+    
+    
+    
+   
 
     //func for imagepicker
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
@@ -91,5 +124,8 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    
+    
 
 }
