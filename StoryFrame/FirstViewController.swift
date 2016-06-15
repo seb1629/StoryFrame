@@ -8,9 +8,10 @@
 
 import UIKit
 
-class FirstViewController: UIViewController{
+class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
    
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var createCard: UIBarButtonItem!
     
     override func viewWillAppear(animated: Bool) {
@@ -19,7 +20,8 @@ class FirstViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+       tableView.delegate = self
+        tableView.dataSource = self
         setupNavBar()
        
     }
@@ -42,5 +44,26 @@ class FirstViewController: UIViewController{
         self.tabBarController?.navigationItem.rightBarButtonItem = createCard
     }
     
+    //tableView
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let post = "hello it s working"
+        if let cell = tableView.dequeueReusableCellWithIdentifier("postCell") as? PostTableViewCell {
+            cell.configurePost(post)
+            return cell
+        } else {
+            let cell = PostTableViewCell()
+            cell.configurePost(post)
+            return cell
+        }
+    
 }
-
+}

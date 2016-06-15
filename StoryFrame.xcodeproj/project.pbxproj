@@ -15,6 +15,7 @@
 		32CB25DD1D0E4E340065442B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32CB25DB1D0E4E340065442B /* LaunchScreen.storyboard */; };
 		32CB25E51D0E4EF30065442B /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CB25E41D0E4EF30065442B /* LogInViewController.swift */; };
 		32CB25EA1D0E51030065442B /* ScaleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CB25E91D0E51030065442B /* ScaleImage.swift */; };
+		32CDFF171D118DE000018C56 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CDFF161D118DE000018C56 /* PostTableViewCell.swift */; };
 		32D742761D0E712500C4E616 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D742751D0E712500C4E616 /* Constants.swift */; };
 		32D7427C1D0ECB7600C4E616 /* CreateCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D7427B1D0ECB7600C4E616 /* CreateCardViewController.swift */; };
 		32D7427E1D0EFE8200C4E616 /* roundedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D7427D1D0EFE8200C4E616 /* roundedImage.swift */; };
@@ -31,6 +32,7 @@
 		32CB25DE1D0E4E340065442B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32CB25E41D0E4EF30065442B /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		32CB25E91D0E51030065442B /* ScaleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaleImage.swift; sourceTree = "<group>"; };
+		32CDFF161D118DE000018C56 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		32D742751D0E712500C4E616 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		32D7427B1D0ECB7600C4E616 /* CreateCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCardViewController.swift; sourceTree = "<group>"; };
 		32D7427D1D0EFE8200C4E616 /* roundedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = roundedImage.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			children = (
 				32CB25E91D0E51030065442B /* ScaleImage.swift */,
 				32D7427D1D0EFE8200C4E616 /* roundedImage.swift */,
+				32CDFF161D118DE000018C56 /* PostTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				32D742761D0E712500C4E616 /* Constants.swift in Sources */,
 				32CB25D11D0E4E340065442B /* AppDelegate.swift in Sources */,
 				32CB25D31D0E4E340065442B /* FirstViewController.swift in Sources */,
+				32CDFF171D118DE000018C56 /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
