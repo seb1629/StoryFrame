@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class CreateCardViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate, UIPopoverControllerDelegate {
 
     @IBOutlet weak var openCamera: UIBarButtonItem!
@@ -42,6 +43,11 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
     
     @IBAction func onDeletePressed(sender: UIButton) {
         //insert code
+    }
+    
+    
+    @IBAction func createPostBtnPressed(sender: UIButton) {
+        // insert the post object
     }
     
     
@@ -148,6 +154,8 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
         
             imagePicker.dismissViewControllerAnimated(true, completion: nil)
             currentImage.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        
+        
         
         }
     

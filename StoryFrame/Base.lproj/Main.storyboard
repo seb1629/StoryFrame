@@ -41,7 +41,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="USs-Ua-x4a" id="DxD-H2-8sJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="74.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BGMain" translatesAutoresizingMaskIntoConstraints="NO" id="Xar-iD-17z">
@@ -51,8 +51,8 @@
                                                         <constraint firstAttribute="height" constant="75" id="uWV-7d-KKk"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Profile taken when I was shooting for a wedding in California, the bribe was my mother's sister" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UWM-wk-K8R">
-                                                    <rect key="frame" x="81" y="39" width="513" height="35"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile taken when I was shooting for a wedding in California, the bribe was my mother's sister" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UWM-wk-K8R">
+                                                    <rect key="frame" x="81" y="34" width="513" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="35" id="jMg-M9-Mjj"/>
                                                     </constraints>
@@ -255,7 +255,7 @@
                                                 <constraint firstAttribute="height" constant="160" id="qgp-T8-uwS"/>
                                             </constraints>
                                         </imageView>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Tap the camera icon to create a post" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="SOz-A4-KM5">
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Tap the camera icon to create a new card" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="SOz-A4-KM5">
                                             <rect key="frame" x="30" y="127" width="540" height="110"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -265,21 +265,66 @@
                                             <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="30"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugG-6j-FfI">
+                                            <rect key="frame" x="143" y="530" width="314" height="40"/>
+                                            <color key="backgroundColor" red="0.39607843139999999" green="0.71372549019999998" blue="1" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="3fn-Ia-d4K"/>
+                                                <constraint firstAttribute="width" constant="314" id="hqr-jD-xpE"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
+                                            <state key="normal" title="Create your card">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="createPostBtnPressed:" destination="Rox-w0-fxH" eventType="touchUpInside" id="Wev-Na-fC3"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B7V-mf-itr" customClass="CreateCardButton" customModule="StoryFrame" customModuleProvider="target">
+                                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                            <color key="backgroundColor" red="0.39607843139999999" green="0.71372549019999998" blue="1" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
+                                            <state key="normal" title="Create your card">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                                <rect key="frame" x="243" y="623" width="314" height="40"/>
+                                            </variation>
+                                        </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="ugG-6j-FfI" secondAttribute="bottom" constant="30" id="4kn-wE-su4"/>
                                         <constraint firstItem="rB2-4f-01g" firstAttribute="centerY" secondItem="xbZ-yI-crJ" secondAttribute="centerY" id="8hU-zC-iH1"/>
+                                        <constraint firstItem="ugG-6j-FfI" firstAttribute="centerX" secondItem="xbZ-yI-crJ" secondAttribute="centerX" id="8mN-It-0AV"/>
                                         <constraint firstItem="zw1-hT-H2d" firstAttribute="top" secondItem="xbZ-yI-crJ" secondAttribute="top" constant="64" id="DvM-ru-nSh"/>
                                         <constraint firstItem="rB2-4f-01g" firstAttribute="centerX" secondItem="xbZ-yI-crJ" secondAttribute="centerX" id="FXp-OK-y2N"/>
                                         <constraint firstAttribute="trailing" secondItem="zw1-hT-H2d" secondAttribute="trailing" id="HOw-y8-nZ7"/>
                                         <constraint firstItem="SOz-A4-KM5" firstAttribute="top" secondItem="zw1-hT-H2d" secondAttribute="bottom" constant="30" id="IAn-iv-Af8"/>
+                                        <constraint firstItem="ugG-6j-FfI" firstAttribute="leading" secondItem="xbZ-yI-crJ" secondAttribute="leading" constant="30" id="Re9-Ji-fMg"/>
+                                        <constraint firstAttribute="trailing" secondItem="ugG-6j-FfI" secondAttribute="trailing" constant="30" id="Uvo-KK-1Px"/>
                                         <constraint firstItem="zw1-hT-H2d" firstAttribute="leading" secondItem="xbZ-yI-crJ" secondAttribute="leading" id="VTh-DS-pUm"/>
                                         <constraint firstItem="SOz-A4-KM5" firstAttribute="leading" secondItem="xbZ-yI-crJ" secondAttribute="leading" constant="30" id="gQH-DY-ZMh"/>
                                         <constraint firstItem="rB2-4f-01g" firstAttribute="top" secondItem="SOz-A4-KM5" secondAttribute="bottom" constant="80" id="gUa-Mj-LuM"/>
                                         <constraint firstAttribute="trailing" secondItem="SOz-A4-KM5" secondAttribute="trailing" constant="30" id="rj5-Vo-Fvc"/>
                                     </constraints>
                                     <variation key="default">
+                                        <mask key="subviews">
+                                            <exclude reference="B7V-mf-itr"/>
+                                        </mask>
                                         <mask key="constraints">
                                             <exclude reference="8hU-zC-iH1"/>
+                                            <exclude reference="Re9-Ji-fMg"/>
+                                            <exclude reference="Uvo-KK-1Px"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=regular-widthClass=regular">
+                                        <mask key="subviews">
+                                            <include reference="B7V-mf-itr"/>
                                         </mask>
                                     </variation>
                                 </view>

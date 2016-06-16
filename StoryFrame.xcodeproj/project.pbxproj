@@ -17,6 +17,9 @@
 		32CB25EA1D0E51030065442B /* ScaleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CB25E91D0E51030065442B /* ScaleImage.swift */; };
 		32CDFF171D118DE000018C56 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CDFF161D118DE000018C56 /* PostTableViewCell.swift */; };
 		32CDFF1D1D125C8900018C56 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CDFF1C1D125C8900018C56 /* CustomTabBarController.swift */; };
+		32CDFF211D1280F300018C56 /* CreateCardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CDFF201D1280F300018C56 /* CreateCardButton.swift */; };
+		32CDFF231D12858600018C56 /* UIViewStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CDFF221D12858600018C56 /* UIViewStyling.swift */; };
+		32CDFF251D12C0EC00018C56 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CDFF241D12C0EC00018C56 /* CardModel.swift */; };
 		32D742761D0E712500C4E616 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D742751D0E712500C4E616 /* Constants.swift */; };
 		32D7427C1D0ECB7600C4E616 /* CreateCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D7427B1D0ECB7600C4E616 /* CreateCardViewController.swift */; };
 		32D7427E1D0EFE8200C4E616 /* roundedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D7427D1D0EFE8200C4E616 /* roundedImage.swift */; };
@@ -35,6 +38,9 @@
 		32CB25E91D0E51030065442B /* ScaleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaleImage.swift; sourceTree = "<group>"; };
 		32CDFF161D118DE000018C56 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		32CDFF1C1D125C8900018C56 /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		32CDFF201D1280F300018C56 /* CreateCardButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCardButton.swift; sourceTree = "<group>"; };
+		32CDFF221D12858600018C56 /* UIViewStyling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewStyling.swift; sourceTree = "<group>"; };
+		32CDFF241D12C0EC00018C56 /* CardModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		32D742751D0E712500C4E616 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		32D7427B1D0ECB7600C4E616 /* CreateCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCardViewController.swift; sourceTree = "<group>"; };
 		32D7427D1D0EFE8200C4E616 /* roundedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = roundedImage.swift; sourceTree = "<group>"; };
@@ -97,6 +103,7 @@
 		32CB25E71D0E50A30065442B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				32CDFF241D12C0EC00018C56 /* CardModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -108,6 +115,8 @@
 				32D7427D1D0EFE8200C4E616 /* roundedImage.swift */,
 				32CDFF161D118DE000018C56 /* PostTableViewCell.swift */,
 				32CDFF1C1D125C8900018C56 /* CustomTabBarController.swift */,
+				32CDFF201D1280F300018C56 /* CreateCardButton.swift */,
+				32CDFF221D12858600018C56 /* UIViewStyling.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -192,11 +201,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				32CB25E51D0E4EF30065442B /* LogInViewController.swift in Sources */,
+				32CDFF231D12858600018C56 /* UIViewStyling.swift in Sources */,
 				32D7427E1D0EFE8200C4E616 /* roundedImage.swift in Sources */,
 				32CDFF1D1D125C8900018C56 /* CustomTabBarController.swift in Sources */,
 				32CB25D51D0E4E340065442B /* SecondViewController.swift in Sources */,
+				32CDFF251D12C0EC00018C56 /* CardModel.swift in Sources */,
 				32D7427C1D0ECB7600C4E616 /* CreateCardViewController.swift in Sources */,
 				32CB25EA1D0E51030065442B /* ScaleImage.swift in Sources */,
+				32CDFF211D1280F300018C56 /* CreateCardButton.swift in Sources */,
 				32D742761D0E712500C4E616 /* Constants.swift in Sources */,
 				32CB25D11D0E4E340065442B /* AppDelegate.swift in Sources */,
 				32CB25D31D0E4E340065442B /* FirstViewController.swift in Sources */,

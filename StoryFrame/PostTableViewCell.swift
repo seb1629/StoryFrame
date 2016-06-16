@@ -19,9 +19,11 @@ class PostTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-// need to enter a post model which I will insert as parameter
-    func configurePost(post: String){
-        
+
+    func configurePost(post: Post){
+        postTitle.text = post.cardTitle
+        postDesc.text = post.cardDesc
+        //postImage.image = post.photoImgPath
     }
 
 }

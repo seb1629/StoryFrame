@@ -10,7 +10,7 @@ import UIKit
 
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
-   
+   var posts = [Post]()
   
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var createCard: UIBarButtonItem!
@@ -57,12 +57,13 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return posts.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let post = "hello it s working"
-        if let cell = tableView.dequeueReusableCellWithIdentifier("postCell") as? PostTableViewCell {
+        
+        let post = posts[indexPath.row]
+        if let cell = tableView.dequeueReusableCellWithIdentifier("PostTableViewCell") as? PostTableViewCell {
             cell.configurePost(post)
             cell.layoutMargins = UIEdgeInsetsZero
             return cell
