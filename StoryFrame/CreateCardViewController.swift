@@ -11,8 +11,10 @@ import UIKit
 class CreateCardViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate, UIPopoverControllerDelegate {
 
     @IBOutlet weak var openCamera: UIBarButtonItem!
-    var imagePicker: UIImagePickerController!
-    var cameraViewController: UIImagePickerController!
+    @IBOutlet weak var popOverBtnIpad: UIButton!
+    var imagePicker: UIImagePickerController! = UIImagePickerController()
+    var popover: UIPopoverPresentationController? = nil
+    
     
     @IBOutlet weak var locationView: UIView!
     @IBOutlet weak var background: UIImageView!
@@ -28,10 +30,9 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
         transparentNavBar()
         customRightBarButton()
         
-        cameraViewController = UIImagePickerController()
-        cameraViewController.delegate = self
-        imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
+        
+//        imagePicker = UIImagePickerController()
+//        imagePicker.delegate = self
        //setupLayer()
     }
 
@@ -82,16 +83,17 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
     
     
     func alertPopup(){
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+        let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .ActionSheet)
         
+         popover = alert.popoverPresentationController
         
         let cameraAction = UIAlertAction(title: "Camera", style: .Default) { UIAlertAction in
             
-           self.presentViewController(self.cameraViewController, animated: true, completion: nil)
+           self.openTheCamera()
         }
         
         let photoGalleryAction = UIAlertAction(title: "Photo Library", style: .Default) { UIAlertAction in
-            self.presentViewController(self.imagePicker, animated: true, completion: nil)
+            self.openGallery()
             
         }
         
@@ -99,23 +101,41 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
             alert.dismissViewControllerAnimated(true, completion: nil)
         }
         
+        imagePicker?.delegate = self
         alert.addAction(cameraAction)
         alert.addAction(photoGalleryAction)
         alert.addAction(cancelAction)
         
-        self.presentViewController(alert, animated: true, completion: nil)
+        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
+            self.presentViewController(alert, animated: true, completion: nil)
+        } else {
+            popover?.sourceView = view
+            popover?.sourceRect = CGRect(x:100, y:50, width: 64, height: 50)
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+    
         alert.view.tintColor = UIColor(red: 101/255, green: 182/255, blue: 255/255, alpha: 1.0)
     }
     
     
-    //func for camera
-    func onCameraPressed(){
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera){
-            let cameraViewController = UIImagePickerController()
-            cameraViewController.sourceType = UIImagePickerControllerSourceType.Camera
-            cameraViewController.delegate = self
-            
-            self.presentViewController(cameraViewController, animated: true, completion: nil)
+    //func for camera and Gallery
+    func openTheCamera(){
+        if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)){
+         imagePicker!.sourceType = UIImagePickerControllerSourceType.Camera
+        self.presentViewController(imagePicker, animated: true, completion: nil)
+        } else {
+            openGallery()
+        }
+    }
+    
+    func openGallery(){
+        imagePicker!.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
+            self.presentViewController(imagePicker, animated: true, completion: nil)
+        } else {
+            popover?.sourceView = view
+            popover?.sourceRect = CGRect(x:100, y:50, width: 64, height: 50)
+            self.presentViewController(imagePicker, animated: true, completion: nil)
         }
     }
     
@@ -125,15 +145,12 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
    
 
     //func for imagepicker
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         
             imagePicker.dismissViewControllerAnimated(true, completion: nil)
-            currentImage.image = image
+            currentImage.image = info[UIImagePickerControllerOriginalImage] as? UIImage
        
         }
-        
-    
-    
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)

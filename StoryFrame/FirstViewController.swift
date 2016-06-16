@@ -11,6 +11,7 @@ import UIKit
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
    
+  
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var createCard: UIBarButtonItem!
     
@@ -20,10 +21,15 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       tableView.delegate = self
+        
+                
+        tabBarItem.selectedImage = UIImage(named: "Card Collection")!.imageWithRenderingMode(.AlwaysOriginal)
+        tableView.delegate = self
         tableView.dataSource = self
         setupNavBar()
        
+        tableView.layoutMargins = UIEdgeInsetsZero
+        tableView.separatorInset = UIEdgeInsetsZero
     }
 
  
@@ -58,6 +64,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let post = "hello it s working"
         if let cell = tableView.dequeueReusableCellWithIdentifier("postCell") as? PostTableViewCell {
             cell.configurePost(post)
+            cell.layoutMargins = UIEdgeInsetsZero
             return cell
         } else {
             let cell = PostTableViewCell()

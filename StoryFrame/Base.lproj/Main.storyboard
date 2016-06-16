@@ -7,7 +7,7 @@
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
-        <!--First-->
+        <!--Collection-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="StoryFrame" customModuleProvider="target" sceneMemberID="viewController">
@@ -37,11 +37,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.60784313729999995" green="0.1843137255" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="76" id="USs-Ua-x4a" customClass="PostTableViewCell" customModule="StoryFrame" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="76"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="75" id="USs-Ua-x4a" customClass="PostTableViewCell" customModule="StoryFrame" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="USs-Ua-x4a" id="DxD-H2-8sJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="75.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BGMain" translatesAutoresizingMaskIntoConstraints="NO" id="Xar-iD-17z">
@@ -132,7 +132,7 @@
                             <constraint firstItem="FKX-rx-Qk8" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="kAA-1a-9tk"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Collection" image="Card Collection" id="acW-dT-cKf"/>
                     <navigationItem key="navigationItem" id="T8c-Ne-o2k">
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="4QJ-1j-34x">
@@ -206,12 +206,18 @@
                                                                             <exclude reference="7Y5-KZ-nUT"/>
                                                                         </mask>
                                                                     </variation>
+                                                                    <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                                                        <rect key="frame" x="260" y="0.0" width="87" height="20"/>
+                                                                    </variation>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="248" ambiguous="YES" misplaced="YES" text="19.02.2016" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvZ-DX-HLX">
                                                                     <rect key="frame" x="174" y="17" width="59" height="17"/>
                                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="11"/>
                                                                     <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
+                                                                    <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                                                        <rect key="frame" x="274" y="17" width="59" height="17"/>
+                                                                    </variation>
                                                                 </label>
                                                             </subviews>
                                                             <constraints>
@@ -501,8 +507,8 @@
     <resources>
         <image name="BGMain" width="375" height="667"/>
         <image name="CameraImg" width="87" height="69"/>
+        <image name="Card Collection" width="25" height="23"/>
         <image name="For You" width="25" height="23"/>
         <image name="cameranavbar" width="23" height="18"/>
-        <image name="first" width="30" height="30"/>
     </resources>
 </document>
