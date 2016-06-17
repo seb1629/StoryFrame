@@ -9,41 +9,64 @@
 import UIKit
 
 
-class CreateCardViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate, UIPopoverControllerDelegate {
+class CreateCardViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate, UIPopoverControllerDelegate, UITextViewDelegate {
 
     @IBOutlet weak var openCamera: UIBarButtonItem!
    
     var imagePicker: UIImagePickerController! = UIImagePickerController()
     var popover: UIPopoverPresentationController? = nil
     
-    @IBOutlet weak var locationView: UIView!
+    
     @IBOutlet weak var background: UIImageView!
     
-    @IBOutlet weak var photoLocationLabel: UILabel!
-    @IBOutlet weak var datePhotoTaken: UILabel!
+    
+    @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var instructionTextView: UITextView!
     @IBOutlet weak var currentImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        transparentNavBar()
+       titleField.backgroundColor = UIColor(white: 1, alpha: 0.3)
+        instructionTextView.textContainerInset = UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 10)
+        instructionTextView.textContainer.maximumNumberOfLines = 7
+        instructionTextView.textContainer.lineBreakMode = .ByWordWrapping
+    self.instructionTextView.placeholder = "Enter your last name"
+     
+        
+//        transparentNavBar()
         customRightBarButton()
         
+}
+    
+    
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        //instructionTextView.sizeToFit()
         
+        dispatch_async(dispatch_get_main_queue()) {
+            self.instructionTextView.scrollRangeToVisible(NSMakeRange(0, 0))
+        }
     }
 
-    @IBAction func onCancelTapped(sender: AnyObject) {
+    
+    @IBAction func onCancelTapped(sender: UIBarButtonItem) {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    @IBAction func onCameraTapped(sender: AnyObject) {
+    @IBAction func onCameraTapped(sender: UIBarButtonItem) {
         alertPopup()
     }
     
-    @IBAction func onDeletePressed(sender: UIButton) {
+    @IBAction func onStyleBtnPressed(sender: UIButton) {
         //insert code
     }
+    
+    @IBAction func onCategoryBtnPressed(sender: UIButton) {
+    }
+    
+    
+    
     
     
     @IBAction func createPostBtnPressed(sender: UIButton) {
@@ -53,13 +76,13 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
     
      //Custom button navBar
     
-    func transparentNavBar(){
-        let bar: UINavigationBar! = self.navigationController?.navigationBar
-        bar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        bar.shadowImage = UIImage()
-        bar.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.65)
-        locationView.backgroundColor = UIColor(white: 1, alpha: 0.3)
-    }
+//    func transparentNavBar(){
+//        let bar: UINavigationBar! = self.navigationController?.navigationBar
+//        bar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+//        bar.shadowImage = UIImage()
+//        bar.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.65)
+//        locationView.backgroundColor = UIColor(white: 1, alpha: 0.3)
+//    }
     
     func customRightBarButton(){
         let btn: UIButton = UIButton(type: UIButtonType.Custom)
@@ -154,16 +177,10 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
         
             imagePicker.dismissViewControllerAnimated(true, completion: nil)
             currentImage.image = info[UIImagePickerControllerOriginalImage] as? UIImage
-        
-        
-        
+            background.image = info[UIImagePickerControllerOriginalImage] as? UIImage
         }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
     }
-    
-    
-    
-
-}
+    }

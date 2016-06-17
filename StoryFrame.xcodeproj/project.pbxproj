@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		327F52C11D13E1D000E31B0A /* CustomShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F52C01D13E1D000E31B0A /* CustomShadow.swift */; };
+		327F52C51D140FD400E31B0A /* extensionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F52C41D140FD400E31B0A /* extensionTextView.swift */; };
 		32CB25D11D0E4E340065442B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CB25D01D0E4E340065442B /* AppDelegate.swift */; };
 		32CB25D31D0E4E340065442B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CB25D21D0E4E340065442B /* FirstViewController.swift */; };
 		32CB25D51D0E4E340065442B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CB25D41D0E4E340065442B /* SecondViewController.swift */; };
@@ -17,16 +19,18 @@
 		32CB25EA1D0E51030065442B /* ScaleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CB25E91D0E51030065442B /* ScaleImage.swift */; };
 		32CDFF171D118DE000018C56 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CDFF161D118DE000018C56 /* PostTableViewCell.swift */; };
 		32CDFF1D1D125C8900018C56 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CDFF1C1D125C8900018C56 /* CustomTabBarController.swift */; };
-		32CDFF211D1280F300018C56 /* CreateCardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CDFF201D1280F300018C56 /* CreateCardButton.swift */; };
 		32CDFF231D12858600018C56 /* UIViewStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CDFF221D12858600018C56 /* UIViewStyling.swift */; };
 		32CDFF251D12C0EC00018C56 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CDFF241D12C0EC00018C56 /* CardModel.swift */; };
 		32CDFF291D12DD6F00018C56 /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CDFF281D12DD6F00018C56 /* UIScrollView+EmptyDataSet.m */; };
 		32D742761D0E712500C4E616 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D742751D0E712500C4E616 /* Constants.swift */; };
 		32D7427C1D0ECB7600C4E616 /* CreateCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D7427B1D0ECB7600C4E616 /* CreateCardViewController.swift */; };
 		32D7427E1D0EFE8200C4E616 /* roundedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D7427D1D0EFE8200C4E616 /* roundedImage.swift */; };
+		3878A30E4B1FB63F1AA60F51 /* Pods_StoryFrame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47798403A44BC32E8353F2ED /* Pods_StoryFrame.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		327F52C01D13E1D000E31B0A /* CustomShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomShadow.swift; sourceTree = "<group>"; };
+		327F52C41D140FD400E31B0A /* extensionTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensionTextView.swift; sourceTree = "<group>"; };
 		32CB25CD1D0E4E340065442B /* StoryFrame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoryFrame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32CB25D01D0E4E340065442B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32CB25D21D0E4E340065442B /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -39,7 +43,6 @@
 		32CB25E91D0E51030065442B /* ScaleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaleImage.swift; sourceTree = "<group>"; };
 		32CDFF161D118DE000018C56 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		32CDFF1C1D125C8900018C56 /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
-		32CDFF201D1280F300018C56 /* CreateCardButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCardButton.swift; sourceTree = "<group>"; };
 		32CDFF221D12858600018C56 /* UIViewStyling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewStyling.swift; sourceTree = "<group>"; };
 		32CDFF241D12C0EC00018C56 /* CardModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		32CDFF261D12DD6F00018C56 /* StoryFrame-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StoryFrame-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -48,6 +51,9 @@
 		32D742751D0E712500C4E616 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		32D7427B1D0ECB7600C4E616 /* CreateCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCardViewController.swift; sourceTree = "<group>"; };
 		32D7427D1D0EFE8200C4E616 /* roundedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = roundedImage.swift; sourceTree = "<group>"; };
+		47798403A44BC32E8353F2ED /* Pods_StoryFrame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StoryFrame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E0ACCBB099DBD36F0357F8D /* Pods-StoryFrame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StoryFrame.release.xcconfig"; path = "Pods/Target Support Files/Pods-StoryFrame/Pods-StoryFrame.release.xcconfig"; sourceTree = "<group>"; };
+		DBC1336BBCCCC3CABC4B23C8 /* Pods-StoryFrame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StoryFrame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StoryFrame/Pods-StoryFrame.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3878A30E4B1FB63F1AA60F51 /* Pods_StoryFrame.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +73,8 @@
 			children = (
 				32CB25CF1D0E4E340065442B /* StoryFrame */,
 				32CB25CE1D0E4E340065442B /* Products */,
+				9382E86FC4AB57C919E48EF6 /* Pods */,
+				3D13236E849AAE61F9AF7C3F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,8 +131,9 @@
 				32D7427D1D0EFE8200C4E616 /* roundedImage.swift */,
 				32CDFF161D118DE000018C56 /* PostTableViewCell.swift */,
 				32CDFF1C1D125C8900018C56 /* CustomTabBarController.swift */,
-				32CDFF201D1280F300018C56 /* CreateCardButton.swift */,
 				32CDFF221D12858600018C56 /* UIViewStyling.swift */,
+				327F52C01D13E1D000E31B0A /* CustomShadow.swift */,
+				327F52C41D140FD400E31B0A /* extensionTextView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -136,6 +146,23 @@
 			name = Util;
 			sourceTree = "<group>";
 		};
+		3D13236E849AAE61F9AF7C3F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				47798403A44BC32E8353F2ED /* Pods_StoryFrame.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9382E86FC4AB57C919E48EF6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DBC1336BBCCCC3CABC4B23C8 /* Pods-StoryFrame.debug.xcconfig */,
+				9E0ACCBB099DBD36F0357F8D /* Pods-StoryFrame.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,9 +170,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 32CB25E11D0E4E340065442B /* Build configuration list for PBXNativeTarget "StoryFrame" */;
 			buildPhases = (
+				A4DDCEC85244D6821D2BE4D4 /* Check Pods Manifest.lock */,
 				32CB25C91D0E4E340065442B /* Sources */,
 				32CB25CA1D0E4E340065442B /* Frameworks */,
 				32CB25CB1D0E4E340065442B /* Resources */,
+				72E39A030105721A6A17B8F9 /* Embed Pods Frameworks */,
+				EDD8C7C01E3DDA1E453252CA /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -202,11 +232,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		72E39A030105721A6A17B8F9 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StoryFrame/Pods-StoryFrame-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4DDCEC85244D6821D2BE4D4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EDD8C7C01E3DDA1E453252CA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StoryFrame/Pods-StoryFrame-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		32CB25C91D0E4E340065442B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				327F52C11D13E1D000E31B0A /* CustomShadow.swift in Sources */,
 				32CB25E51D0E4EF30065442B /* LogInViewController.swift in Sources */,
 				32CDFF231D12858600018C56 /* UIViewStyling.swift in Sources */,
 				32D7427E1D0EFE8200C4E616 /* roundedImage.swift in Sources */,
@@ -216,11 +295,11 @@
 				32CDFF291D12DD6F00018C56 /* UIScrollView+EmptyDataSet.m in Sources */,
 				32D7427C1D0ECB7600C4E616 /* CreateCardViewController.swift in Sources */,
 				32CB25EA1D0E51030065442B /* ScaleImage.swift in Sources */,
-				32CDFF211D1280F300018C56 /* CreateCardButton.swift in Sources */,
 				32D742761D0E712500C4E616 /* Constants.swift in Sources */,
 				32CB25D11D0E4E340065442B /* AppDelegate.swift in Sources */,
 				32CB25D31D0E4E340065442B /* FirstViewController.swift in Sources */,
 				32CDFF171D118DE000018C56 /* PostTableViewCell.swift in Sources */,
+				327F52C51D140FD400E31B0A /* extensionTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +412,7 @@
 		};
 		32CB25E21D0E4E340065442B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBC1336BBCCCC3CABC4B23C8 /* Pods-StoryFrame.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -347,6 +427,7 @@
 		};
 		32CB25E31D0E4E340065442B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E0ACCBB099DBD36F0357F8D /* Pods-StoryFrame.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

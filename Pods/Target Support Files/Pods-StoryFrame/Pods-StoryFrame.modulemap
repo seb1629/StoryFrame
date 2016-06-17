@@ -1,0 +1,6 @@
+framework module Pods_StoryFrame {
+  umbrella header "Pods-StoryFrame-umbrella.h"
+
+  export *
+  module * { export * }
+}
