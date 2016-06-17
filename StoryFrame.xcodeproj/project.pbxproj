@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		327F52C11D13E1D000E31B0A /* CustomShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F52C01D13E1D000E31B0A /* CustomShadow.swift */; };
 		327F52C51D140FD400E31B0A /* extensionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F52C41D140FD400E31B0A /* extensionTextView.swift */; };
 		32CB25D11D0E4E340065442B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CB25D01D0E4E340065442B /* AppDelegate.swift */; };
 		32CB25D31D0E4E340065442B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CB25D21D0E4E340065442B /* FirstViewController.swift */; };
@@ -29,7 +28,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		327F52C01D13E1D000E31B0A /* CustomShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomShadow.swift; sourceTree = "<group>"; };
 		327F52C41D140FD400E31B0A /* extensionTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensionTextView.swift; sourceTree = "<group>"; };
 		32CB25CD1D0E4E340065442B /* StoryFrame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoryFrame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32CB25D01D0E4E340065442B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -132,7 +130,6 @@
 				32CDFF161D118DE000018C56 /* PostTableViewCell.swift */,
 				32CDFF1C1D125C8900018C56 /* CustomTabBarController.swift */,
 				32CDFF221D12858600018C56 /* UIViewStyling.swift */,
-				327F52C01D13E1D000E31B0A /* CustomShadow.swift */,
 				327F52C41D140FD400E31B0A /* extensionTextView.swift */,
 			);
 			name = View;
@@ -285,7 +282,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				327F52C11D13E1D000E31B0A /* CustomShadow.swift in Sources */,
 				32CB25E51D0E4EF30065442B /* LogInViewController.swift in Sources */,
 				32CDFF231D12858600018C56 /* UIViewStyling.swift in Sources */,
 				32D7427E1D0EFE8200C4E616 /* roundedImage.swift in Sources */,

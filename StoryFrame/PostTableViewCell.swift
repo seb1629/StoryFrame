@@ -22,7 +22,7 @@ class PostTableViewCell: UITableViewCell {
 
     func configurePost(post: Post){
         postTitle.text = post.cardTitle
-        postDesc.text = post.cardDesc
+        //postDesc.text = post.cardDesc
         //postImage.image = post.photoImgPath
     }
 

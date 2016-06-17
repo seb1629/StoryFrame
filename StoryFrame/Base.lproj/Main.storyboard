@@ -174,7 +174,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BGMain" translatesAutoresizingMaskIntoConstraints="NO" id="rB2-4f-01g" customClass="roundedImage" customModule="StoryFrame" customModuleProvider="target">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BGMain" translatesAutoresizingMaskIntoConstraints="NO" id="rB2-4f-01g">
                                             <rect key="frame" x="26" y="150" width="548" height="174"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="323" id="oxy-dD-hXw"/>
@@ -347,9 +347,11 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="background" destination="PoA-fn-BRZ" id="1kz-uX-VOr"/>
+                        <outlet property="categoriesButton" destination="lRN-0f-J4B" id="fUW-8z-d4l"/>
                         <outlet property="currentImage" destination="rB2-4f-01g" id="GjQ-If-kXH"/>
                         <outlet property="instructionTextView" destination="uZA-Zb-jty" id="dQF-XX-x5K"/>
                         <outlet property="openCamera" destination="8Zl-Ya-1CL" id="rCO-mf-ZaH"/>
+                        <outlet property="styleButton" destination="Jeu-vp-d7c" id="m7T-0a-iiC"/>
                         <outlet property="titleField" destination="APl-r8-aO3" id="Mxd-ww-gcN"/>
                     </connections>
                 </viewController>

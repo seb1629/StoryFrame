@@ -18,8 +18,8 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
     
     
     @IBOutlet weak var background: UIImageView!
-    
-    
+    @IBOutlet weak var styleButton: UIButton!
+    @IBOutlet weak var categoriesButton: UIButton!
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var instructionTextView: UITextView!
     @IBOutlet weak var currentImage: UIImageView!
@@ -31,19 +31,27 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
         instructionTextView.textContainer.maximumNumberOfLines = 7
         instructionTextView.textContainer.lineBreakMode = .ByWordWrapping
     self.instructionTextView.placeholder = "Enter your last name"
-     
-        
+        setupLayer()
 //        transparentNavBar()
         customRightBarButton()
         
 }
-    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        let currentText = textView.text ?? ""
+        guard let stringRange = range.rangeForString(currentText) else { return false }
+        
+        let changedText = currentText.stringByReplacingCharactersInRange(stringRange, withString: text)
+        
+        return changedText.characters.count <= 4
+    }
+
     
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         //instructionTextView.sizeToFit()
         
+
         dispatch_async(dispatch_get_main_queue()) {
             self.instructionTextView.scrollRangeToVisible(NSMakeRange(0, 0))
         }
@@ -70,8 +78,18 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
     
     
     @IBAction func createPostBtnPressed(sender: UIButton) {
-        // insert the post object
-    }
+        if titleField.text != "" && titleField.text != nil {
+            title = titleField.text
+            titleField.hidden = true
+            styleButton.hidden = false
+            categoriesButton.hidden = false
+        } else {
+            
+        }
+        }
+            
+    
+
     
     
      //Custom button navBar
@@ -96,16 +114,22 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     
-    //if I Need Shadow later
-//    func setupLayer() {
-//        
-//        
-//        currentImage.layer.shadowColor = UIColor.blackColor().CGColor
-//        currentImage.layer.shadowOffset = CGSizeMake(0, 10)
-//        currentImage.layer.shadowOpacity = 1
-//        currentImage.layer.shadowRadius = 10
-//        currentImage.layer.shadowPath = UIBezierPath(rect: currentImage.bounds).CGPath
-//    }
+    
+    //if I Need Shadow later - Shadow not working
+    func setupLayer() {
+        currentImage.layer.shadowColor = UIColor(red: shadowColor, green: shadowColor, blue: shadowColor, alpha: 1).CGColor
+        currentImage.layer.shadowOffset = CGSizeMake(0, 2)
+        currentImage.layer.shadowOpacity = 0.8
+        currentImage.layer.shadowRadius = 5.0
+        instructionTextView.layer.shadowColor = UIColor(red: shadowColor, green: shadowColor, blue: shadowColor, alpha: 1).CGColor
+        instructionTextView.layer.shadowOffset = CGSizeMake(0, 2)
+        instructionTextView.layer.shadowOpacity = 0.8
+        instructionTextView.layer.shadowRadius = 5.0
+
+        
+    }
+    
+    
     
     
     func alertPopup(){
