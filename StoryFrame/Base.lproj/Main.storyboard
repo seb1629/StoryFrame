@@ -41,7 +41,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="USs-Ua-x4a" id="DxD-H2-8sJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="75"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="74.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BGMain" translatesAutoresizingMaskIntoConstraints="NO" id="Xar-iD-17z">
@@ -431,13 +431,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="StoryFrame" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFD-Tu-NpM">
-                                        <rect key="frame" x="198" y="190" width="205" height="54"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="39"/>
+                                        <rect key="frame" x="184" y="190" width="232" height="54"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="39"/>
                                         <color key="textColor" red="0.60784313725490191" green="0.18431372549019609" blue="0.68235294117647061" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C0D-cP-hJJ">
-                                        <rect key="frame" x="199" y="376" width="202" height="3"/>
+                                        <rect key="frame" x="199" y="396" width="202" height="3"/>
                                         <color key="backgroundColor" red="0.60784313729999995" green="0.1843137255" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="202" id="axC-zM-mDf"/>
@@ -445,7 +445,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qe4-VD-Ymb">
-                                        <rect key="frame" x="257" y="270" width="87" height="69"/>
+                                        <rect key="frame" x="257" y="282" width="87" height="69"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="87" id="Dw3-ru-4k9"/>
                                         </constraints>
@@ -457,9 +457,9 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.396078431372549" green="0.71372549019607845" blue="1" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="Qe4-VD-Ymb" firstAttribute="top" secondItem="gFD-Tu-NpM" secondAttribute="bottom" constant="26" id="IWt-Kw-Hdv"/>
+                                    <constraint firstItem="Qe4-VD-Ymb" firstAttribute="top" secondItem="gFD-Tu-NpM" secondAttribute="bottom" constant="38" id="IWt-Kw-Hdv"/>
                                     <constraint firstItem="Qe4-VD-Ymb" firstAttribute="centerX" secondItem="Fd7-ae-iPh" secondAttribute="centerX" id="Sxt-pp-HPD"/>
-                                    <constraint firstItem="C0D-cP-hJJ" firstAttribute="top" secondItem="Qe4-VD-Ymb" secondAttribute="bottom" constant="37" id="aSr-PT-gZZ"/>
+                                    <constraint firstItem="C0D-cP-hJJ" firstAttribute="top" secondItem="Qe4-VD-Ymb" secondAttribute="bottom" constant="45" id="aSr-PT-gZZ"/>
                                     <constraint firstItem="gFD-Tu-NpM" firstAttribute="top" secondItem="Fd7-ae-iPh" secondAttribute="top" constant="190" id="dGi-M9-grn"/>
                                     <constraint firstItem="gFD-Tu-NpM" firstAttribute="centerX" secondItem="Fd7-ae-iPh" secondAttribute="centerX" id="mXF-R7-yqj"/>
                                     <constraint firstItem="C0D-cP-hJJ" firstAttribute="centerX" secondItem="Fd7-ae-iPh" secondAttribute="centerX" id="tH9-Jv-SoZ"/>

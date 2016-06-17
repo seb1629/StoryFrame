@@ -20,6 +20,7 @@
 		32CDFF211D1280F300018C56 /* CreateCardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CDFF201D1280F300018C56 /* CreateCardButton.swift */; };
 		32CDFF231D12858600018C56 /* UIViewStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CDFF221D12858600018C56 /* UIViewStyling.swift */; };
 		32CDFF251D12C0EC00018C56 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CDFF241D12C0EC00018C56 /* CardModel.swift */; };
+		32CDFF291D12DD6F00018C56 /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CDFF281D12DD6F00018C56 /* UIScrollView+EmptyDataSet.m */; };
 		32D742761D0E712500C4E616 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D742751D0E712500C4E616 /* Constants.swift */; };
 		32D7427C1D0ECB7600C4E616 /* CreateCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D7427B1D0ECB7600C4E616 /* CreateCardViewController.swift */; };
 		32D7427E1D0EFE8200C4E616 /* roundedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D7427D1D0EFE8200C4E616 /* roundedImage.swift */; };
@@ -41,6 +42,9 @@
 		32CDFF201D1280F300018C56 /* CreateCardButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCardButton.swift; sourceTree = "<group>"; };
 		32CDFF221D12858600018C56 /* UIViewStyling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewStyling.swift; sourceTree = "<group>"; };
 		32CDFF241D12C0EC00018C56 /* CardModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
+		32CDFF261D12DD6F00018C56 /* StoryFrame-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StoryFrame-Bridging-Header.h"; sourceTree = "<group>"; };
+		32CDFF271D12DD6F00018C56 /* UIScrollView+EmptyDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+EmptyDataSet.h"; sourceTree = "<group>"; };
+		32CDFF281D12DD6F00018C56 /* UIScrollView+EmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+EmptyDataSet.m"; sourceTree = "<group>"; };
 		32D742751D0E712500C4E616 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		32D7427B1D0ECB7600C4E616 /* CreateCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCardViewController.swift; sourceTree = "<group>"; };
 		32D7427D1D0EFE8200C4E616 /* roundedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = roundedImage.swift; sourceTree = "<group>"; };
@@ -76,6 +80,8 @@
 		32CB25CF1D0E4E340065442B /* StoryFrame */ = {
 			isa = PBXGroup;
 			children = (
+				32CDFF271D12DD6F00018C56 /* UIScrollView+EmptyDataSet.h */,
+				32CDFF281D12DD6F00018C56 /* UIScrollView+EmptyDataSet.m */,
 				32D742741D0E710C00C4E616 /* Util */,
 				32CB25E81D0E50AC0065442B /* View */,
 				32CB25E71D0E50A30065442B /* Model */,
@@ -85,6 +91,7 @@
 				32CB25D91D0E4E340065442B /* Assets.xcassets */,
 				32CB25DB1D0E4E340065442B /* LaunchScreen.storyboard */,
 				32CB25DE1D0E4E340065442B /* Info.plist */,
+				32CDFF261D12DD6F00018C56 /* StoryFrame-Bridging-Header.h */,
 			);
 			path = StoryFrame;
 			sourceTree = "<group>";
@@ -206,6 +213,7 @@
 				32CDFF1D1D125C8900018C56 /* CustomTabBarController.swift in Sources */,
 				32CB25D51D0E4E340065442B /* SecondViewController.swift in Sources */,
 				32CDFF251D12C0EC00018C56 /* CardModel.swift in Sources */,
+				32CDFF291D12DD6F00018C56 /* UIScrollView+EmptyDataSet.m in Sources */,
 				32D7427C1D0ECB7600C4E616 /* CreateCardViewController.swift in Sources */,
 				32CB25EA1D0E51030065442B /* ScaleImage.swift in Sources */,
 				32CDFF211D1280F300018C56 /* CreateCardButton.swift in Sources */,
@@ -327,10 +335,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = StoryFrame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.montyprograms.StoryFrame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "StoryFrame/StoryFrame-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -338,10 +349,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = StoryFrame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.montyprograms.StoryFrame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "StoryFrame/StoryFrame-Bridging-Header.h";
 			};
 			name = Release;
 		};

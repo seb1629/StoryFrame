@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate{
 
    var posts = [Post]()
   
@@ -30,6 +30,10 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
        
         tableView.layoutMargins = UIEdgeInsetsZero
         tableView.separatorInset = UIEdgeInsetsZero
+        
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
+        tableView.tableFooterView = UIView()
     }
 
  
@@ -40,12 +44,12 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func setupNavBar(){
         let label: UILabel = UILabel(frame: CGRectMake(0, 0, 120, 50))
         label.backgroundColor = UIColor.clearColor()
-        label.numberOfLines = 2
-        label.font = UIFont(name: "Avenir Next", size: 16)
-        label.font = UIFont.systemFontOfSize(16, weight: UIFontWeightRegular)
+//        label.numberOfLines = 2
+        label.font = UIFont(name: "Avenir Next", size: 20)
+        label.font = UIFont.systemFontOfSize(16, weight: UIFontWeightHeavy)
         label.textAlignment = NSTextAlignment.Center
         label.textColor = titleNavColor
-        label.text = "StoryFrame\n My Cards"
+        label.text = "StoryFrame"
         self.tabBarController?.navigationItem.titleView = label
         self.tabBarController?.navigationItem.rightBarButtonItem = createCard
     }
@@ -74,4 +78,34 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     
 }
+    
+    //sample for the empty table view need to customise
+    func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let str = "Start Creating Awesome Cards"
+        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)]
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+    
+    func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let str = "Tap the + button at the top of the screen to add your first StoryFrame!"
+        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleBody)]
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+    
+    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
+        return UIImage(named: "CardsEmptyArray")
+    }
+    
+//    func buttonTitleForEmptyDataSet(scrollView: UIScrollView!, forState state: UIControlState) -> NSAttributedString! {
+//        let str = "Add Grokkleglob"
+//        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleCallout)]
+//        return NSAttributedString(string: str, attributes: attrs)
+//    }
+//    
+//    func emptyDataSetDidTapButton(scrollView: UIScrollView!) {
+//        let ac = UIAlertController(title: "Button tapped!", message: nil, preferredStyle: .Alert)
+//        ac.addAction(UIAlertAction(title: "Hurray", style: .Default, handler: nil))
+//        presentViewController(ac, animated: true, completion: nil)
+//    }
+    
 }
