@@ -7,16 +7,23 @@
 //
 
 import UIKit
+import CoreData
 
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate{
 
-   var posts = [Post]()
+   var cards = [Card]()
+    var fetchedResultsController: NSFetchedResultsController!
   
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var createCard: UIBarButtonItem!
     
     override func viewWillAppear(animated: Bool) {
         navigationController?.navigationBarHidden = false
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        fetchAndSetResults()
+        tableView.reloadData()
     }
     
     override func viewDidLoad() {
@@ -36,6 +43,21 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.tableFooterView = UIView()
     }
 
+    func fetchAndSetResults(){
+        let app = UIApplication.sharedApplication().delegate as! AppDelegate
+        let context = app.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName: "Card")
+        
+        do {
+            let results = try context.executeFetchRequest(fetchRequest)
+            self.cards = results as! [Card]
+            
+            
+        } catch let err as NSError {
+            print(err.debugDescription)
+        }
+        
+    }
  
     @IBAction func onCreateCardTapped(sender: AnyObject) {
         performSegueWithIdentifier("addSegue", sender: self)
@@ -61,13 +83,13 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count
+        return cards.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let post = posts[indexPath.row]
-        if let cell = tableView.dequeueReusableCellWithIdentifier("PostTableViewCell") as? PostTableViewCell {
+        let post = cards[indexPath.row]
+        if let cell = tableView.dequeueReusableCellWithIdentifier("postCell") as? PostTableViewCell {
             cell.configurePost(post)
             cell.layoutMargins = UIEdgeInsetsZero
             return cell

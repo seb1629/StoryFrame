@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import CoreData
 class PostTableViewCell: UITableViewCell {
 
     @IBOutlet weak var postImage: UIImageView!
@@ -20,10 +20,10 @@ class PostTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    func configurePost(post: Post){
-        postTitle.text = post.cardTitle
-        //postDesc.text = post.cardDesc
-        //postImage.image = post.photoImgPath
+    func configurePost(card: Card){
+        postTitle.text = card.cardTitle
+        postDesc.text = card.cardDescription
+        postImage.image = card.takeCardImage()
     }
 
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 
 class CreateCardViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate, UIPopoverControllerDelegate, UITextViewDelegate {
@@ -85,13 +86,33 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
     
     @IBAction func createPostBtnPressed(sender: UIButton) {
         if titleField.text != "" && titleField.text != nil {
+            let app = UIApplication.sharedApplication().delegate as! AppDelegate
+            let context = app.managedObjectContext
+            let entity = NSEntityDescription.entityForName("Card", inManagedObjectContext: context)!
+            let card = Card(entity: entity, insertIntoManagedObjectContext: context)
             title = titleField.text
-            titleField.hidden = true
-            styleButton.hidden = false
-            categoriesButton.hidden = false
+            card.cardTitle = titleField.text
+            card.cardDescription = instructionTextView.text
+            card.prepareCardImage(currentImage.image!)
+//            titleField.hidden = true
+//            styleButton.hidden = false
+//            categoriesButton.hidden = false
+            
+            context.insertObject(card)
+            
+            do {
+                try context.save()
+                
+            }catch{
+                print("could not save the card")
+            }
+            dismissViewControllerAnimated(true, completion: nil)
+            
         } else {
             
         }
+        
+        
         }
             
     

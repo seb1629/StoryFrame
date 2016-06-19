@@ -12,7 +12,7 @@ import Accounts
 
 class detailViewController: UIViewController {
 
-    var post: Post!
+    var post: Card!
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -4,14 +4,13 @@
 //
 //  Created by SEBASTIEN MONTIBELLER on 16/06/2016.
 //  Copyright © 2016 SEBASTIEN MONTIBELLER. All rights reserved.
-//
+
 
 import UIKit
 
 class Post: NSObject {
     
     private var _cardTitle: String!
-    private var _photoImgPath: String!
     private var _cardDesc: String?
     private var _textColor: UIColor?
     private var _cardColor: UIColor?
@@ -22,9 +21,6 @@ class Post: NSObject {
         return _cardTitle
     }
     
-    var photoImgPath: String {
-        return _photoImgPath
-    }
     
     var cardDesc: String? {
         return _cardDesc
@@ -46,9 +42,9 @@ class Post: NSObject {
         return _imageData
     }
     
-    init(cardTitle: String, cardDesc: String, photoImgPath: String){
+    init(cardTitle: String, cardDesc: String, imageData: NSData){
         self._cardTitle = cardTitle
-        self._photoImgPath = photoImgPath
+        self._imageData = imageData
     }
     
 }
