@@ -98,8 +98,26 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             cell.configurePost(post)
             return cell
         }
-    
 }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        let card = self.cards[indexPath.row]
+        self.performSegueWithIdentifier("goToDetail", sender: card)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+       if segue.identifier == "goToDetail" {
+        if let detailVC = segue.destinationViewController as? detailViewController {
+            
+            detailVC.post = sender as! Card
+        }
+        
+        
+        }
+
+        }
+    
     
     //sample for the empty table view need to customise
     func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {

@@ -13,6 +13,8 @@
 		327F52DC1D169F6F00E31B0A /* Card+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F52DA1D169F6F00E31B0A /* Card+CoreDataProperties.swift */; };
 		327F52DD1D169F6F00E31B0A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F52DB1D169F6F00E31B0A /* Card.swift */; };
 		327F52DF1D16A0F900E31B0A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 327F52DE1D16A0F900E31B0A /* CoreData.framework */; };
+		327F52E11D16EC3D00E31B0A /* customLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F52E01D16EC3D00E31B0A /* customLabel.swift */; };
+		327F52E31D17009E00E31B0A /* top aligned.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F52E21D17009E00E31B0A /* top aligned.swift */; };
 		32CB25D11D0E4E340065442B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CB25D01D0E4E340065442B /* AppDelegate.swift */; };
 		32CB25D31D0E4E340065442B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CB25D21D0E4E340065442B /* FirstViewController.swift */; };
 		32CB25D51D0E4E340065442B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CB25D41D0E4E340065442B /* SecondViewController.swift */; };
@@ -52,6 +54,8 @@
 		327F52DA1D169F6F00E31B0A /* Card+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		327F52DB1D169F6F00E31B0A /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		327F52DE1D16A0F900E31B0A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		327F52E01D16EC3D00E31B0A /* customLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customLabel.swift; sourceTree = "<group>"; };
+		327F52E21D17009E00E31B0A /* top aligned.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "top aligned.swift"; sourceTree = "<group>"; };
 		32CB25CD1D0E4E340065442B /* StoryFrame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoryFrame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32CB25D01D0E4E340065442B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32CB25D21D0E4E340065442B /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +163,8 @@
 				32CDFF1C1D125C8900018C56 /* CustomTabBarController.swift */,
 				32CDFF221D12858600018C56 /* UIViewStyling.swift */,
 				327F52C41D140FD400E31B0A /* extensionTextView.swift */,
+				327F52E01D16EC3D00E31B0A /* customLabel.swift */,
+				327F52E21D17009E00E31B0A /* top aligned.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -316,12 +322,14 @@
 				32CB25E51D0E4EF30065442B /* LogInViewController.swift in Sources */,
 				327F52DD1D169F6F00E31B0A /* Card.swift in Sources */,
 				32CDFF231D12858600018C56 /* UIViewStyling.swift in Sources */,
+				327F52E31D17009E00E31B0A /* top aligned.swift in Sources */,
 				32D7427E1D0EFE8200C4E616 /* roundedImage.swift in Sources */,
 				32CDFF1D1D125C8900018C56 /* CustomTabBarController.swift in Sources */,
 				32CB25D51D0E4E340065442B /* SecondViewController.swift in Sources */,
 				32CDFF251D12C0EC00018C56 /* CardModel.swift in Sources */,
 				32CDFF291D12DD6F00018C56 /* UIScrollView+EmptyDataSet.m in Sources */,
 				327F52D01D16248C00E31B0A /* detailViewController.swift in Sources */,
+				327F52E11D16EC3D00E31B0A /* customLabel.swift in Sources */,
 				32D7427C1D0ECB7600C4E616 /* CreateCardViewController.swift in Sources */,
 				32CB25EA1D0E51030065442B /* ScaleImage.swift in Sources */,
 				327F52DC1D169F6F00E31B0A /* Card+CoreDataProperties.swift in Sources */,
