@@ -35,6 +35,12 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
 //        transparentNavBar()
         customRightBarButton()
         
+        
+        
+        //test for saving data with realm
+        
+        
+        
 }
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
         let currentText = textView.text ?? ""
