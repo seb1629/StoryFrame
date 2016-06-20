@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        UINavigationBar.appearance().barTintColor = UIColor(red: 101/255, green: 182/255, blue: 255/255, alpha: 0.65)
+        UINavigationBar.appearance().barTintColor = UIColor(red: 101/255, green: 182/255, blue: 255/255, alpha: 0.3)
         IQKeyboardManager.sharedManager().enable = true
         // this is the text below the icon
         //UITabBar.appearance().tintColor = UIColor.redColor()

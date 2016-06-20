@@ -25,6 +25,29 @@ import UIKit
         layer.borderWidth = 1
         layer.borderColor = UIColor.blackColor().CGColor
     }
+    override func drawRect(rect: CGRect) {
+        super.drawRect(rect)
+        self.layer.shadowColor = UIColor.blackColor().CGColor
+        self.layer.shadowOffset = CGSizeMake(0, 1)
+        self.layer.shadowOpacity = 0.6
+        self.layer.shadowRadius = 2.0
+        self.layer.backgroundColor = UIColor(white: 1.0, alpha: 1.0).CGColor
+        self.layer.opacity = 0.8
+        self.layer.shouldRasterize = true
+    }
+    override func awakeFromNib() {
+        setupLayer()
+        
+    }
+    
+    func setupLayer(){
+        
+        self.textColor = UIColor(red: 64/255, green: 64/255, blue: 64/255, alpha: 1.0)
+        self.font = UIFont(name: "Avenir Next - regular", size: 13)
+        
+    }
+
+    
     
         }
 

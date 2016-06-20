@@ -19,11 +19,14 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewWillAppear(animated: Bool) {
         navigationController?.navigationBarHidden = false
+        fetchAndSetResults()
+        tableView.reloadData()
+        
+        
     }
     
     override func viewDidAppear(animated: Bool) {
-        fetchAndSetResults()
-        tableView.reloadData()
+         setupNavBar()
     }
     
     override func viewDidLoad() {
@@ -33,7 +36,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tabBarItem.selectedImage = UIImage(named: "Card Collection")!.imageWithRenderingMode(.AlwaysOriginal)
         tableView.delegate = self
         tableView.dataSource = self
-        setupNavBar()
+       
        
         tableView.layoutMargins = UIEdgeInsetsZero
         tableView.separatorInset = UIEdgeInsetsZero
@@ -66,7 +69,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func setupNavBar(){
         let label: UILabel = UILabel(frame: CGRectMake(0, 0, 120, 50))
         label.backgroundColor = UIColor.clearColor()
-//        label.numberOfLines = 2
         label.font = UIFont(name: "Avenir Next", size: 20)
         label.font = UIFont.systemFontOfSize(16, weight: UIFontWeightHeavy)
         label.textAlignment = NSTextAlignment.Center

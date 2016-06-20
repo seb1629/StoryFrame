@@ -31,14 +31,11 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
         instructionTextView.textContainerInset = UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 10)
         instructionTextView.textContainer.maximumNumberOfLines = 7
         instructionTextView.textContainer.lineBreakMode = .ByWordWrapping
-    self.instructionTextView.placeholder = "Enter your last name"
+    self.instructionTextView.placeholder = "Enter a Story"
         setupLayer()
 //        transparentNavBar()
         customRightBarButton()
         
-        
-        
-        //test for saving data with realm
         
         
         
@@ -94,6 +91,7 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
             card.cardTitle = titleField.text
             card.cardDescription = instructionTextView.text
             card.prepareCardImage(currentImage.image!)
+            
 //            titleField.hidden = true
 //            styleButton.hidden = false
 //            categoriesButton.hidden = false
@@ -148,11 +146,7 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
         currentImage.layer.shadowOffset = CGSizeMake(0, 2)
         currentImage.layer.shadowOpacity = 0.8
         currentImage.layer.shadowRadius = 5.0
-        instructionTextView.layer.shadowColor = UIColor(red: shadowColor, green: shadowColor, blue: shadowColor, alpha: 1).CGColor
-        instructionTextView.layer.shadowOffset = CGSizeMake(0, 2)
-        instructionTextView.layer.shadowOpacity = 0.8
-        instructionTextView.layer.shadowRadius = 5.0
-
+        
         
     }
     

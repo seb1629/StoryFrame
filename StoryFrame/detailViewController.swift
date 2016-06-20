@@ -19,22 +19,30 @@ class detailViewController: UIViewController {
     @IBOutlet weak var bgImage: UIImageView!
     @IBOutlet weak var frontImage: UIImageView!
     @IBOutlet weak var descLabel: UILabel!
+    @IBOutlet weak var topView: UIView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: #selector(detailViewController.shareTapped))
         
-        }
+    }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         frontImage.image = post.takeCardImage()
+        bgImage.image = post.takeCardImage()
         navigationItem.title = post.cardTitle
         descLabel.text = post.cardDescription
         descLabel.backgroundColor = UIColor(white: 1.0, alpha: 0.6)
         descLabel.textColor = UIColor.darkGrayColor()
         descLabel.sizeToFit()
+        topView.backgroundColor = UIColor(white: 1, alpha: 0.6)
+       
+        
+        
     }
+    
   
     func shareTapped(){
         
@@ -45,6 +53,16 @@ class detailViewController: UIViewController {
    
     @IBAction func onEditPressed(sender: UIButton) {
     }
+
+    func transparentNavBar(){
+                let bar: UINavigationBar! = self.navigationController?.navigationBar
+                bar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+                bar.shadowImage = UIImage()
+                bar.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.30)
+        
+            }
+    
+ 
 
     
 }
