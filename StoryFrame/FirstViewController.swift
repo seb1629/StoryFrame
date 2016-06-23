@@ -104,21 +104,22 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        let card = self.cards[indexPath.row]
-        self.performSegueWithIdentifier("goToDetail", sender: card)
+        //let card = self.cards[indexPath.row]
+        //self.performSegueWithIdentifier("goToDetail", sender: card)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-       if segue.identifier == "goToDetail" {
-        if let detailVC = segue.destinationViewController as? detailViewController {
-            
-            detailVC.post = sender as! Card
-        }
-        
-        
-        }
-
-        }
+    //to replace later with the segue that goes to viewer
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//       if segue.identifier == "goToDetail" {
+//        if let detailVC = segue.destinationViewController as? detailViewController {
+//            
+//            detailVC.post = sender as! Card
+//        }
+//        
+//        
+//        }
+//
+//        }
     
     
     //sample for the empty table view need to customise

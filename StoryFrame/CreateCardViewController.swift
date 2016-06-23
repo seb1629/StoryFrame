@@ -19,8 +19,8 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
     
     
     @IBOutlet weak var background: UIImageView!
-    @IBOutlet weak var styleButton: UIButton!
-    @IBOutlet weak var categoriesButton: UIButton!
+   
+    
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var instructionTextView: UITextView!
     @IBOutlet weak var currentImage: UIImageView!
@@ -70,49 +70,62 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
         alertPopup()
     }
     
-    @IBAction func onStyleBtnPressed(sender: UIButton) {
-        //insert code
+   
+    
+    
+    
+    
+    @IBAction func nextStepPressed(sender: customBtn) {
+        
+        performSegueWithIdentifier("goToNextSegue", sender: self)
     }
     
-    @IBAction func onCategoryBtnPressed(sender: UIButton) {
-    }
-    
-    
-    
-    
-    
-    @IBAction func createPostBtnPressed(sender: UIButton) {
-        if titleField.text != "" && titleField.text != nil {
-            let app = UIApplication.sharedApplication().delegate as! AppDelegate
-            let context = app.managedObjectContext
-            let entity = NSEntityDescription.entityForName("Card", inManagedObjectContext: context)!
-            let card = Card(entity: entity, insertIntoManagedObjectContext: context)
-            title = titleField.text
-            card.cardTitle = titleField.text
-            card.cardDescription = instructionTextView.text
-            card.prepareCardImage(currentImage.image!)
-            
-//            titleField.hidden = true
-//            styleButton.hidden = false
-//            categoriesButton.hidden = false
-            
-            context.insertObject(card)
-            
-            do {
-                try context.save()
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "goToNextSegue" {
+            if let vc = segue.destinationViewController as? detailViewController {
+                vc.currentImageDetail = currentImage.image
+                vc.instructionTextViewDetail = instructionTextView.text
+                vc.titleFieldDetail = titleField.text!
                 
-            }catch{
-                print("could not save the card")
+                
+                
             }
-            dismissViewControllerAnimated(true, completion: nil)
-            
-        } else {
-            
         }
-        
-        
-        }
-            
+    }
+    
+    
+//    @IBAction func createPostBtnPressed(sender: UIButton) {
+//        if titleField.text != "" && titleField.text != nil {
+//            let app = UIApplication.sharedApplication().delegate as! AppDelegate
+//            let context = app.managedObjectContext
+//            let entity = NSEntityDescription.entityForName("Card", inManagedObjectContext: context)!
+//            let card = Card(entity: entity, insertIntoManagedObjectContext: context)
+//            title = titleField.text
+//            card.cardTitle = titleField.text
+//            card.cardDescription = instructionTextView.text
+//            card.prepareCardImage(currentImage.image!)
+//            
+////            titleField.hidden = true
+////            styleButton.hidden = false
+////            categoriesButton.hidden = false
+//            
+//            context.insertObject(card)
+//            
+//            do {
+//                try context.save()
+//                
+//            }catch{
+//                print("could not save the card")
+//            }
+//            dismissViewControllerAnimated(true, completion: nil)
+//            
+//        } else {
+//            
+//        }
+//        
+//        
+//        }
+    
     
 
     

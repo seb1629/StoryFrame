@@ -7,12 +7,17 @@
 //
 
 import UIKit
-import Social
-import Accounts
+import CoreData
 
 class detailViewController: UIViewController {
 
-    var post: Card!
+    
+    
+    
+     var titleFieldDetail = ""
+     var instructionTextViewDetail = ""
+     var currentImageDetail: UIImage!
+    
     
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var datePhotoLabel: UILabel!
@@ -24,29 +29,53 @@ class detailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: #selector(detailViewController.shareTapped))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Save, target: self, action: #selector(detailViewController.saveTapped))
         
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        frontImage.image = post.takeCardImage()
-        bgImage.image = post.takeCardImage()
-        navigationItem.title = post.cardTitle
-        descLabel.text = post.cardDescription
+        
+        frontImage.image = currentImageDetail
+        bgImage.image = currentImageDetail
+        descLabel.text = instructionTextViewDetail
+        navigationItem.title = titleFieldDetail
+        topView.backgroundColor = UIColor(white: 1, alpha: 0.6)
+        descLabel.sizeToFit()
         descLabel.backgroundColor = UIColor(white: 1.0, alpha: 0.6)
         descLabel.textColor = UIColor.darkGrayColor()
-        descLabel.sizeToFit()
-        topView.backgroundColor = UIColor(white: 1, alpha: 0.6)
-       
-        
-        
+    
     }
     
   
-    func shareTapped(){
+    func saveTapped(){
         
-    }
+            let app = UIApplication.sharedApplication().delegate as! AppDelegate
+            let context = app.managedObjectContext
+            let entity = NSEntityDescription.entityForName("Card", inManagedObjectContext: context)!
+            let card = Card(entity: entity, insertIntoManagedObjectContext: context)
+            card.cardTitle = navigationItem.title
+            card.cardDescription = descLabel.text
+            card.prepareCardImage(frontImage.image!)
+    
+            context.insertObject(card)
+            
+            do {
+                try context.save()
+                
+            }catch{
+                print("could not save the card")
+            }
+            dismissViewControllerAnimated(true, completion: nil)
+            
+       
+            
+        }
+        
+        
+    
+
+
 
     @IBAction func onDeletePressed(sender: UIButton) {
     }
