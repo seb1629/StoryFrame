@@ -67,20 +67,13 @@ class detailViewController: UIViewController {
                 print("could not save the card")
             }
             dismissViewControllerAnimated(true, completion: nil)
-            
-       
-            
+        
         }
-        
-        
-    
 
-
-
-    @IBAction func onDeletePressed(sender: UIButton) {
+    @IBAction func onCategoriesPressed(sender: UIButton) {
     }
    
-    @IBAction func onEditPressed(sender: UIButton) {
+    @IBAction func onStylePressed(sender: UIButton) {
     }
 
     func transparentNavBar(){

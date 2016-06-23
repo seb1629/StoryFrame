@@ -43,7 +43,7 @@ import UIKit
     func setupLayer(){
         
         self.textColor = UIColor(red: 64/255, green: 64/255, blue: 64/255, alpha: 1.0)
-        self.font = UIFont(name: "Avenir Next - regular", size: 13)
+        self.font = UIFont(name: "Avenir Next - regular", size: 12)
         
     }
 

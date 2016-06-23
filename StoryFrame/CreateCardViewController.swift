@@ -76,10 +76,17 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
     
     
     @IBAction func nextStepPressed(sender: customBtn) {
-        
+        if titleField.text != "" && titleField.text != nil {
         performSegueWithIdentifier("goToNextSegue", sender: self)
+        } else {
+            let ac = UIAlertController(title: "Title required!", message: "In order to proceed to the next step, please enter a title", preferredStyle: .Alert)
+            let cancelAction = UIAlertAction(title: "Ok", style: .Cancel) { UIAlertAction in
+                ac.dismissViewControllerAnimated(true, completion: nil)
+            }
+            ac.addAction(cancelAction)
+            presentViewController(ac, animated: true, completion: nil)
+        }
     }
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "goToNextSegue" {
             if let vc = segue.destinationViewController as? detailViewController {
@@ -94,37 +101,6 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     
-//    @IBAction func createPostBtnPressed(sender: UIButton) {
-//        if titleField.text != "" && titleField.text != nil {
-//            let app = UIApplication.sharedApplication().delegate as! AppDelegate
-//            let context = app.managedObjectContext
-//            let entity = NSEntityDescription.entityForName("Card", inManagedObjectContext: context)!
-//            let card = Card(entity: entity, insertIntoManagedObjectContext: context)
-//            title = titleField.text
-//            card.cardTitle = titleField.text
-//            card.cardDescription = instructionTextView.text
-//            card.prepareCardImage(currentImage.image!)
-//            
-////            titleField.hidden = true
-////            styleButton.hidden = false
-////            categoriesButton.hidden = false
-//            
-//            context.insertObject(card)
-//            
-//            do {
-//                try context.save()
-//                
-//            }catch{
-//                print("could not save the card")
-//            }
-//            dismissViewControllerAnimated(true, completion: nil)
-//            
-//        } else {
-//            
-//        }
-//        
-//        
-//        }
     
     
 
