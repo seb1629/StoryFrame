@@ -15,7 +15,7 @@ import UIKit
                                                                             options: NSStringDrawingOptions.UsesLineFragmentOrigin,
                                                                             attributes: [NSFontAttributeName: font],
                                                                             context: nil).size
-            super.drawTextInRect(CGRectMake(10, 10, CGRectGetWidth(self.frame), ceil(labelStringSize.height)))
+            super.drawTextInRect(CGRectMake(10, 10, CGRectGetWidth(self.frame) - 20, ceil(labelStringSize.height)))
         } else {
             super.drawTextInRect(rect)
         }
@@ -24,6 +24,8 @@ import UIKit
         super.prepareForInterfaceBuilder()
         layer.borderWidth = 1
         layer.borderColor = UIColor.blackColor().CGColor
+        self.textColor = UIColor(red: 64/255, green: 64/255, blue: 64/255, alpha: 1.0)
+        self.font = UIFont(name: "Avenir Next-regular", size: 11)
     }
     override func drawRect(rect: CGRect) {
         super.drawRect(rect)
@@ -36,18 +38,9 @@ import UIKit
         self.layer.shouldRasterize = true
     }
     override func awakeFromNib() {
-        setupLayer()
         
-    }
-    
-    func setupLayer(){
-        
-        self.textColor = UIColor(red: 64/255, green: 64/255, blue: 64/255, alpha: 1.0)
-        self.font = UIFont(name: "Avenir Next-regular", size: 11)
         
     }
 
-    
-    
         }
 
