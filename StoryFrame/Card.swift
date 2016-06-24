@@ -23,4 +23,4 @@ class Card: NSManagedObject {
         return img
     }
 
-}
+    }

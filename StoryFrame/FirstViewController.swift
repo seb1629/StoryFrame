@@ -38,8 +38,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.dataSource = self
        
        
-        tableView.layoutMargins = UIEdgeInsetsZero
-        tableView.separatorInset = UIEdgeInsetsZero
+//        tableView.layoutMargins = UIEdgeInsetsZero 
+//        tableView.separatorInset = UIEdgeInsetsZero
         
         tableView.emptyDataSetSource = self
         tableView.emptyDataSetDelegate = self
@@ -93,7 +93,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let post = cards[indexPath.row]
         if let cell = tableView.dequeueReusableCellWithIdentifier("postCell") as? PostTableViewCell {
             cell.configurePost(post)
-            cell.layoutMargins = UIEdgeInsetsZero
+            //cell.layoutMargins = UIEdgeInsetsZero
             return cell
         } else {
             let cell = PostTableViewCell()

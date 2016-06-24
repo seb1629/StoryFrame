@@ -30,7 +30,7 @@ class detailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Save, target: self, action: #selector(detailViewController.saveTapped))
-        
+        descLabel.sizeToFit()
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -39,9 +39,10 @@ class detailViewController: UIViewController {
         frontImage.image = currentImageDetail
         bgImage.image = currentImageDetail
         descLabel.text = instructionTextViewDetail
+//        descLabel.font = UIFont(name: "Avenir Next-Regular", size: 23.0)
         navigationItem.title = titleFieldDetail
         topView.backgroundColor = UIColor(white: 1, alpha: 0.6)
-        descLabel.sizeToFit()
+        
         descLabel.backgroundColor = UIColor(white: 1.0, alpha: 0.6)
         descLabel.textColor = UIColor.darkGrayColor()
     
@@ -56,8 +57,8 @@ class detailViewController: UIViewController {
             let card = Card(entity: entity, insertIntoManagedObjectContext: context)
             card.cardTitle = navigationItem.title
             card.cardDescription = descLabel.text
-            card.prepareCardImage(frontImage.image!)
-    
+            //card.prepareCardImage(frontImage.image!)
+        card.prepareCardImage(screenShot())
             context.insertObject(card)
             
             do {
@@ -71,9 +72,11 @@ class detailViewController: UIViewController {
         }
 
     @IBAction func onCategoriesPressed(sender: UIButton) {
+        
     }
    
     @IBAction func onStylePressed(sender: UIButton) {
+        
     }
 
     func transparentNavBar(){
@@ -83,8 +86,13 @@ class detailViewController: UIViewController {
                 bar.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.30)
         
             }
-    
- 
+    func screenShot() -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(CGSizeMake(375,565), false, 0)
+        self.view.drawViewHierarchyInRect(CGRectMake(0,-93,view.bounds.size.width,view.bounds.size.height - 10),afterScreenUpdates: true)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
 
-    
+        UIGraphicsEndImageContext()
+        
+        return image
+}
 }

@@ -1,10 +1,13 @@
 PODS:
+  - Canvas (0.1.2)
   - IQKeyboardManagerSwift (4.0.3)
 
 DEPENDENCIES:
+  - Canvas (~> 0.1.2)
   - IQKeyboardManagerSwift
 
 SPEC CHECKSUMS:
+  Canvas: eb861e3b555d032648146c8ffda1a5dea40059ca
   IQKeyboardManagerSwift: b6883b720b0e76473692fdc80828442566e1075f
 
 COCOAPODS: 0.39.0
