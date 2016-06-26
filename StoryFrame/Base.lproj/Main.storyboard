@@ -170,13 +170,13 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="favCell" id="Sl3-xS-lvQ" customClass="FavoriteCell" customModule="StoryFrame" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="64" width="92.75" height="92.75"/>
+                                        <rect key="frame" x="0.0" y="64" width="93" height="93"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="92.75" height="92.75"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="93" height="93"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="go9-z2-qu5">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="go9-z2-qu5">
                                                     <rect key="frame" x="-1" y="0.0" width="93" height="93"/>
                                                 </imageView>
                                             </subviews>

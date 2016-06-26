@@ -22,9 +22,9 @@ class CarouselVC: UIViewController, iCarouselDelegate, iCarouselDataSource{
         
     }
 
-    override func viewDidAppear(animated: Bool) {
+    override func viewWillAppear(animated: Bool) {
         fetchAndSetResults()
-       
+       carouselView.reloadData()
     }
     
     
@@ -73,8 +73,8 @@ class CarouselVC: UIViewController, iCarouselDelegate, iCarouselDataSource{
     func carousel(carousel: iCarousel, valueForOption option: iCarouselOption, withDefault value: CGFloat) -> CGFloat {
         if option == iCarouselOption.Spacing {
             
-            
-            return value * 1.2
+            //could be 1.1 or 1.2
+            return value * 1.1
         }
         
         return value

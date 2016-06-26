@@ -153,10 +153,10 @@
 				32CB25E41D0E4EF30065442B /* LogInViewController.swift */,
 				32CB25D21D0E4E340065442B /* FirstViewController.swift */,
 				32CB25D41D0E4E340065442B /* SecondViewController.swift */,
+				32B6E83F1D1FB7A300ADF5DB /* CarouselVC.swift */,
 				32D7427B1D0ECB7600C4E616 /* CreateCardViewController.swift */,
 				327F52CF1D16248C00E31B0A /* detailViewController.swift */,
 				32B6E83D1D1D6C1700ADF5DB /* FinishedViewVC.swift */,
-				32B6E83F1D1FB7A300ADF5DB /* CarouselVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";

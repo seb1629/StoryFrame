@@ -28,10 +28,31 @@ class SecondViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
         override func viewWillAppear(animated: Bool) {
             navigationController?.navigationBarHidden = false
+            fetchAndSetResults()
+            collectionView.reloadData()
 }
+    
+    func fetchAndSetResults(){
+        let app = UIApplication.sharedApplication().delegate as! AppDelegate
+        let context = app.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName: "Card")
+        
+        do {
+            let results = try context.executeFetchRequest(fetchRequest)
+            self.cards = results as! [Card]
+            
+            
+        } catch let err as NSError {
+            print(err.debugDescription)
+        }
+        
+    }
+
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCellWithReuseIdentifier("favCell", forIndexPath: indexPath) as? FavoriteCell {
+             let post = cards[indexPath.row]
+            cell.configureCell(post)
             return cell
         } else {
             return UICollectionViewCell()
@@ -52,7 +73,7 @@ class SecondViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSizeMake(93, 93)
+        return CGSizeMake(93, 115)
     }
     
     //sample for the empty table view need to customise
