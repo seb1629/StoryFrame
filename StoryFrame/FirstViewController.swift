@@ -38,8 +38,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.dataSource = self
        
        
-//        tableView.layoutMargins = UIEdgeInsetsZero 
-//        tableView.separatorInset = UIEdgeInsetsZero
+
         
         tableView.emptyDataSetSource = self
         tableView.emptyDataSetDelegate = self
@@ -93,7 +92,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let post = cards[indexPath.row]
         if let cell = tableView.dequeueReusableCellWithIdentifier("postCell") as? PostTableViewCell {
             cell.configurePost(post)
-            //cell.layoutMargins = UIEdgeInsetsZero
+            
             return cell
         } else {
             let cell = PostTableViewCell()
@@ -104,23 +103,34 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        //let card = self.cards[indexPath.row]
-        //self.performSegueWithIdentifier("goToDetail", sender: card)
+        let myCard: Card!
+        myCard = cards[indexPath.row]
+        performSegueWithIdentifier("goToViewCard", sender: myCard)
+        
+    
     }
     
     //to replace later with the segue that goes to viewer
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//       if segue.identifier == "goToDetail" {
-//        if let detailVC = segue.destinationViewController as? detailViewController {
-//            
-//            detailVC.post = sender as! Card
-//        }
-//        
-//        
-//        }
-//
-//        }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+       if segue.identifier == "goToViewCard" {
+        if let FinishedViewVC = segue.destinationViewController as? FinishedViewVC {
+            if let cardPicked = sender as? Card {
+                
+                FinishedViewVC.cards = cardPicked
+                
+             
+            }
+        }
+      
+        }
+      
+        
+        
+       
+        }
     
+        
+        
     
     //sample for the empty table view need to customise
     func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
@@ -150,5 +160,5 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
 //        ac.addAction(UIAlertAction(title: "Hurray", style: .Default, handler: nil))
 //        presentViewController(ac, animated: true, completion: nil)
 //    }
-    
-}
+    }
+

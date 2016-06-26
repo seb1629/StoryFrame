@@ -39,10 +39,8 @@ class detailViewController: UIViewController {
         frontImage.image = currentImageDetail
         bgImage.image = currentImageDetail
         descLabel.text = instructionTextViewDetail
-//        descLabel.font = UIFont(name: "Avenir Next-Regular", size: 23.0)
         navigationItem.title = titleFieldDetail
         topView.backgroundColor = UIColor(white: 1, alpha: 0.6)
-        
         descLabel.backgroundColor = UIColor(white: 1.0, alpha: 0.6)
         descLabel.textColor = UIColor.darkGrayColor()
     
@@ -57,7 +55,6 @@ class detailViewController: UIViewController {
             let card = Card(entity: entity, insertIntoManagedObjectContext: context)
             card.cardTitle = navigationItem.title
             card.cardDescription = descLabel.text
-            //card.prepareCardImage(frontImage.image!)
         card.prepareCardImage(screenShot())
             context.insertObject(card)
             

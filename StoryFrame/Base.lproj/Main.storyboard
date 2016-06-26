@@ -140,11 +140,31 @@
                         <outlet property="createCard" destination="4QJ-1j-34x" id="Xyf-48-gLE"/>
                         <outlet property="tableView" destination="FKX-rx-Qk8" id="sQG-T4-jyw"/>
                         <segue destination="idz-UE-4Xk" kind="presentation" identifier="addSegue" id="Nja-jt-gYb"/>
+                        <segue destination="6aS-TC-IHB" kind="show" identifier="goToViewCard" id="coz-Ph-JoE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1575" y="-320"/>
+        </scene>
+        <!--Favorite-->
+        <scene sceneID="omZ-XP-Jxr">
+            <objects>
+                <viewController id="9T7-fH-DVN" customClass="SecondViewController" customModule="StoryFrame" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dpu-5z-SB4"/>
+                        <viewControllerLayoutGuide type="bottom" id="hSF-qq-kME"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sTh-ag-UBf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Favorite" image="For You" id="jFt-be-JIx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7kD-dQ-ra1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1571" y="337"/>
         </scene>
         <!--Create Card View Controller-->
         <scene sceneID="Llb-qH-Gf6">
@@ -305,47 +325,6 @@
             </objects>
             <point key="canvasLocation" x="3049" y="-442"/>
         </scene>
-        <!--Favorite-->
-        <scene sceneID="wg7-f3-ORb">
-            <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="StoryFrame" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
-                        <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="195" y="279" width="210" height="42"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="193" y="329" width="215" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
-                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Favorite" image="For You" id="CeC-Lw-snT"/>
-                    <toolbarItems/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1562" y="360"/>
-        </scene>
         <!--Log In View Controller-->
         <scene sceneID="9PI-aB-se3">
             <objects>
@@ -459,7 +438,7 @@
                                                 <real key="value" value="0.5"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="delay">
-                                                <integer key="value" value="5"/>
+                                                <integer key="value" value="3"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
@@ -518,7 +497,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="NBG-ua-DCG" kind="relationship" relationship="viewControllers" id="l4n-UN-Sir"/>
+                        <segue destination="9T7-fH-DVN" kind="relationship" relationship="viewControllers" id="DF6-5N-GCr"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -565,6 +545,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jor-ek-Lnn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2245" y="-320"/>
+        </scene>
+        <!--Data Source-->
+        <scene sceneID="Ybz-J6-ILN">
+            <objects>
+                <viewController id="NBG-ua-DCG" customClass="CarouselVC" customModule="StoryFrame" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aXE-FN-tN7"/>
+                        <viewControllerLayoutGuide type="bottom" id="xXq-fY-K5N"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rm4-nC-PR1" customClass="iCarousel">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="NBG-ua-DCG" id="f32-AG-dyX"/>
+                            <outlet property="delegate" destination="NBG-ua-DCG" id="cOG-Rg-QRw"/>
+                        </connections>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Cards" id="WCX-z4-6kG"/>
+                    <connections>
+                        <outlet property="carouselView" destination="rm4-nC-PR1" id="ux9-UT-huh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0oN-nZ-hYq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1562" y="1046"/>
         </scene>
         <!--Title-->
         <scene sceneID="2JE-gD-xo4">
@@ -716,6 +722,87 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A4X-H2-n4N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3079" y="345"/>
+        </scene>
+        <!--ferdgfdggfdv-->
+        <scene sceneID="zSX-A9-VLa">
+            <objects>
+                <viewController id="6aS-TC-IHB" customClass="FinishedViewVC" customModule="StoryFrame" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NvQ-Nq-E3m"/>
+                        <viewControllerLayoutGuide type="bottom" id="L4L-JQ-7qU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bO4-uF-yGl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OwZ-fo-BAK">
+                                <rect key="frame" x="0.0" y="64" width="600" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAF-hj-640">
+                                        <rect key="frame" x="26" y="0.0" width="45" height="30"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="14"/>
+                                        <state key="normal" title="Delete">
+                                            <color key="titleColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="deleteTapped:" destination="6aS-TC-IHB" eventType="touchUpInside" id="rSX-fI-ngr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z78-w4-WVo">
+                                        <rect key="frame" x="544" y="0.0" width="30" height="30"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="14"/>
+                                        <state key="normal" title="Edit">
+                                            <color key="titleColor" red="0.39607843139999999" green="0.71372549019999998" blue="1" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="EditTapped:" destination="6aS-TC-IHB" eventType="touchUpInside" id="ber-5X-Re8"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="LAF-hj-640" firstAttribute="leading" secondItem="OwZ-fo-BAK" secondAttribute="leading" constant="26" id="0Fd-MX-ivC"/>
+                                    <constraint firstItem="LAF-hj-640" firstAttribute="centerY" secondItem="OwZ-fo-BAK" secondAttribute="centerY" id="HqC-Fs-PqF"/>
+                                    <constraint firstAttribute="height" constant="30" id="Whl-TU-OGa"/>
+                                    <constraint firstItem="Z78-w4-WVo" firstAttribute="centerY" secondItem="OwZ-fo-BAK" secondAttribute="centerY" id="dLT-I4-yey"/>
+                                    <constraint firstAttribute="trailing" secondItem="Z78-w4-WVo" secondAttribute="trailing" constant="26" id="epo-aD-ro8"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BGMain" translatesAutoresizingMaskIntoConstraints="NO" id="XJn-Ps-rLu">
+                                <rect key="frame" x="0.0" y="94" width="600" height="462"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="OwZ-fo-BAK" secondAttribute="trailing" id="KtS-XF-zNe"/>
+                            <constraint firstItem="XJn-Ps-rLu" firstAttribute="leading" secondItem="bO4-uF-yGl" secondAttribute="leading" id="j73-Wt-CtL"/>
+                            <constraint firstItem="OwZ-fo-BAK" firstAttribute="leading" secondItem="bO4-uF-yGl" secondAttribute="leading" id="leb-UY-wQf"/>
+                            <constraint firstAttribute="trailing" secondItem="XJn-Ps-rLu" secondAttribute="trailing" id="u2D-qw-Cw9"/>
+                            <constraint firstItem="OwZ-fo-BAK" firstAttribute="top" secondItem="NvQ-Nq-E3m" secondAttribute="bottom" id="v54-c5-oYy"/>
+                            <constraint firstItem="XJn-Ps-rLu" firstAttribute="top" secondItem="bO4-uF-yGl" secondAttribute="top" constant="119" id="wZZ-YX-0C5"/>
+                            <constraint firstItem="XJn-Ps-rLu" firstAttribute="top" secondItem="OwZ-fo-BAK" secondAttribute="bottom" id="wkW-gT-NXM"/>
+                            <constraint firstItem="L4L-JQ-7qU" firstAttribute="top" secondItem="XJn-Ps-rLu" secondAttribute="bottom" constant="-49" id="wwN-z9-9vh"/>
+                            <constraint firstItem="L4L-JQ-7qU" firstAttribute="top" secondItem="XJn-Ps-rLu" secondAttribute="bottom" id="zOa-Qo-O4J"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="wZZ-YX-0C5"/>
+                                <exclude reference="wwN-z9-9vh"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="ferdgfdggfdv" id="Pul-cu-QP7">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="j3I-9I-yvz"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="currentImage" destination="XJn-Ps-rLu" id="lRm-Ie-yuH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JVC-lG-Kuh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3716" y="-442"/>
         </scene>
     </scenes>
     <resources>
