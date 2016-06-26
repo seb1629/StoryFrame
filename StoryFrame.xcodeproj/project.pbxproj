@@ -20,6 +20,7 @@
 		32B6E83C1D1D6B1100ADF5DB /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B6E83B1D1D6B1100ADF5DB /* iCarousel.m */; };
 		32B6E83E1D1D6C1700ADF5DB /* FinishedViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B6E83D1D1D6C1700ADF5DB /* FinishedViewVC.swift */; };
 		32B6E8401D1FB7A300ADF5DB /* CarouselVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B6E83F1D1FB7A300ADF5DB /* CarouselVC.swift */; };
+		32B6E8421D1FF5B900ADF5DB /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B6E8411D1FF5B900ADF5DB /* FavoriteCell.swift */; };
 		32CB25D11D0E4E340065442B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CB25D01D0E4E340065442B /* AppDelegate.swift */; };
 		32CB25D31D0E4E340065442B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CB25D21D0E4E340065442B /* FirstViewController.swift */; };
 		32CB25D51D0E4E340065442B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CB25D41D0E4E340065442B /* SecondViewController.swift */; };
@@ -67,6 +68,7 @@
 		32B6E83B1D1D6B1100ADF5DB /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		32B6E83D1D1D6C1700ADF5DB /* FinishedViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishedViewVC.swift; sourceTree = "<group>"; };
 		32B6E83F1D1FB7A300ADF5DB /* CarouselVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselVC.swift; sourceTree = "<group>"; };
+		32B6E8411D1FF5B900ADF5DB /* FavoriteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		32CB25CD1D0E4E340065442B /* StoryFrame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoryFrame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32CB25D01D0E4E340065442B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32CB25D21D0E4E340065442B /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				327F52E21D17009E00E31B0A /* top aligned.swift */,
 				32B17CCD1D1BB8E800F91968 /* customBtn.swift */,
 				32B6E8381D1D4F2200ADF5DB /* MaterialViewforcell.swift */,
+				32B6E8411D1FF5B900ADF5DB /* FavoriteCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				32B6E83E1D1D6C1700ADF5DB /* FinishedViewVC.swift in Sources */,
 				32CDFF291D12DD6F00018C56 /* UIScrollView+EmptyDataSet.m in Sources */,
 				32B6E8401D1FB7A300ADF5DB /* CarouselVC.swift in Sources */,
+				32B6E8421D1FF5B900ADF5DB /* FavoriteCell.swift in Sources */,
 				327F52D01D16248C00E31B0A /* detailViewController.swift in Sources */,
 				327F52E11D16EC3D00E31B0A /* customLabel.swift in Sources */,
 				32D7427C1D0ECB7600C4E616 /* CreateCardViewController.swift in Sources */,

@@ -158,9 +158,55 @@
                     <view key="view" contentMode="scaleToFill" id="sTh-ag-UBf">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Y7b-0U-iC5">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="1PH-ak-sby">
+                                    <size key="itemSize" width="92.75" height="92.75"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="favCell" id="Sl3-xS-lvQ" customClass="FavoriteCell" customModule="StoryFrame" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="64" width="92.75" height="92.75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="92.75" height="92.75"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="go9-z2-qu5">
+                                                    <rect key="frame" x="-1" y="0.0" width="93" height="93"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="go9-z2-qu5" firstAttribute="height" secondItem="Sl3-xS-lvQ" secondAttribute="height" id="Ad0-YS-7V2"/>
+                                            <constraint firstItem="go9-z2-qu5" firstAttribute="centerX" secondItem="Sl3-xS-lvQ" secondAttribute="centerX" id="UiC-DI-CPg"/>
+                                            <constraint firstItem="go9-z2-qu5" firstAttribute="width" secondItem="Sl3-xS-lvQ" secondAttribute="width" id="gfo-mc-36b"/>
+                                            <constraint firstItem="go9-z2-qu5" firstAttribute="centerY" secondItem="Sl3-xS-lvQ" secondAttribute="centerY" id="zeQ-PA-r8u"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="myFav" destination="go9-z2-qu5" id="Z9p-cE-hSw"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Y7b-0U-iC5" firstAttribute="top" secondItem="dpu-5z-SB4" secondAttribute="bottom" constant="-64" id="0bq-yU-g1z"/>
+                            <constraint firstAttribute="trailing" secondItem="Y7b-0U-iC5" secondAttribute="trailing" id="F7N-cZ-Ma5"/>
+                            <constraint firstItem="hSF-qq-kME" firstAttribute="top" secondItem="Y7b-0U-iC5" secondAttribute="bottom" id="oip-xL-TMs"/>
+                            <constraint firstItem="Y7b-0U-iC5" firstAttribute="leading" secondItem="sTh-ag-UBf" secondAttribute="leading" id="tif-Oc-7nE"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Favorite" image="For You" id="jFt-be-JIx"/>
+                    <connections>
+                        <outlet property="collectionView" destination="Y7b-0U-iC5" id="exO-aK-yJC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7kD-dQ-ra1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
