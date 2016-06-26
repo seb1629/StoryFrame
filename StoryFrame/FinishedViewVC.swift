@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import Social
+import Accounts
 
 
 class FinishedViewVC: UIViewController  {
@@ -27,8 +28,15 @@ class FinishedViewVC: UIViewController  {
         navigationItem.title = cards.cardTitle
       
         currentImage.image = cards.takeCardImage()
-        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: #selector(shareTapped))
                 
+    }
+    
+    func shareTapped(){
+        let vc = UIActivityViewController(activityItems: [cards], applicationActivities: [])
+        vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        presentViewController(vc, animated: true, completion: nil)
+        
     }
     
     override func viewWillAppear(animated: Bool) {

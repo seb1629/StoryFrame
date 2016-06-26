@@ -60,8 +60,27 @@ class SecondViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        //code
+        collectionView.deselectItemAtIndexPath(indexPath, animated: true)
+        let myCard: Card!
+        myCard = cards[indexPath.row]
+        performSegueWithIdentifier("viewDetail", sender: myCard)
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "viewDetail" {
+            if let FinishedViewVC = segue.destinationViewController as? FinishedViewVC {
+                if let cardPicked = sender as? Card {
+                    
+                    FinishedViewVC.cards = cardPicked
+                    
+                    
+                }
+            }
+            
+        }
+        
+    }
+
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return cards.count

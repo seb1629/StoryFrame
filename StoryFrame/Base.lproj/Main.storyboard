@@ -206,6 +206,7 @@
                     <tabBarItem key="tabBarItem" title="Favorite" image="For You" id="jFt-be-JIx"/>
                     <connections>
                         <outlet property="collectionView" destination="Y7b-0U-iC5" id="exO-aK-yJC"/>
+                        <segue destination="6aS-TC-IHB" kind="show" identifier="viewDetail" id="FBL-cT-mD9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7kD-dQ-ra1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -858,4 +859,7 @@
         <image name="For You" width="25" height="23"/>
         <image name="cameranavbar" width="23" height="18"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="FBL-cT-mD9"/>
+    </inferredMetricsTieBreakers>
 </document>
