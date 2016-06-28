@@ -234,7 +234,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BGMain" translatesAutoresizingMaskIntoConstraints="NO" id="rB2-4f-01g">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BGMain" translatesAutoresizingMaskIntoConstraints="NO" id="rB2-4f-01g">
                                             <rect key="frame" x="26" y="150" width="548" height="185"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="323" id="oxy-dD-hXw"/>
@@ -613,6 +613,7 @@
                     <tabBarItem key="tabBarItem" title="Cards" id="WCX-z4-6kG"/>
                     <connections>
                         <outlet property="carouselView" destination="rm4-nC-PR1" id="ux9-UT-huh"/>
+                        <segue destination="6aS-TC-IHB" kind="show" identifier="segueToDetail" action="showDetailViewController:sender:" id="df3-0o-tGF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0oN-nZ-hYq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -699,7 +700,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2V9-0M-T8W">
                                             <rect key="frame" x="26" y="120" width="548" height="410"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BGMain" translatesAutoresizingMaskIntoConstraints="NO" id="7gG-rI-82x">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BGMain" translatesAutoresizingMaskIntoConstraints="NO" id="7gG-rI-82x">
                                                     <rect key="frame" x="0.0" y="0.0" width="548" height="243"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -815,7 +816,7 @@
                                     <constraint firstAttribute="trailing" secondItem="Z78-w4-WVo" secondAttribute="trailing" constant="26" id="epo-aD-ro8"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BGMain" translatesAutoresizingMaskIntoConstraints="NO" id="XJn-Ps-rLu">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BGMain" translatesAutoresizingMaskIntoConstraints="NO" id="XJn-Ps-rLu">
                                 <rect key="frame" x="0.0" y="94" width="600" height="462"/>
                             </imageView>
                         </subviews>
@@ -860,6 +861,6 @@
         <image name="cameranavbar" width="23" height="18"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FBL-cT-mD9"/>
+        <segue reference="df3-0o-tGF"/>
     </inferredMetricsTieBreakers>
 </document>

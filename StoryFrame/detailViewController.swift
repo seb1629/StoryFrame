@@ -41,12 +41,11 @@ class detailViewController: UIViewController {
         descLabel.text = instructionTextViewDetail
         navigationItem.title = titleFieldDetail
         topView.backgroundColor = UIColor(white: 1, alpha: 0.6)
-        descLabel.backgroundColor = UIColor(white: 1.0, alpha: 0.6)
+        descLabel.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
         descLabel.textColor = UIColor.darkGrayColor()
     
     }
     
-  
     func saveTapped(){
         
             let app = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -81,8 +80,7 @@ class detailViewController: UIViewController {
                 bar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
                 bar.shadowImage = UIImage()
                 bar.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.30)
-        
-            }
+                }
     func screenShot() -> UIImage {
         UIGraphicsBeginImageContextWithOptions(CGSizeMake(375,565), false, 0)
         self.view.drawViewHierarchyInRect(CGRectMake(0,-93,view.bounds.size.width,view.bounds.size.height - 10),afterScreenUpdates: true)
@@ -91,5 +89,5 @@ class detailViewController: UIViewController {
         UIGraphicsEndImageContext()
         
         return image
-}
+    }
 }

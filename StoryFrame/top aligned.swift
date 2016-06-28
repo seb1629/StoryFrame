@@ -34,7 +34,7 @@ import UIKit
         self.layer.shadowOpacity = 0.6
         self.layer.shadowRadius = 2.0
         self.layer.backgroundColor = UIColor(white: 1.0, alpha: 1.0).CGColor
-        self.layer.opacity = 0.8
+        self.layer.opacity = 0.6
         self.layer.shouldRasterize = true
     }
     override func awakeFromNib() {

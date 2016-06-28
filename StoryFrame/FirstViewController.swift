@@ -22,7 +22,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         fetchAndSetResults()
         tableView.reloadData()
         
-        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -31,15 +30,10 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-                
         tabBarItem.selectedImage = UIImage(named: "Card Collection")!.imageWithRenderingMode(.AlwaysOriginal)
         tableView.delegate = self
         tableView.dataSource = self
        
-       
-
-        
         tableView.emptyDataSetSource = self
         tableView.emptyDataSetDelegate = self
         tableView.tableFooterView = UIView()
@@ -54,11 +48,9 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let results = try context.executeFetchRequest(fetchRequest)
             self.cards = results as! [Card]
             
-            
         } catch let err as NSError {
             print(err.debugDescription)
         }
-        
     }
  
     @IBAction func onCreateCardTapped(sender: AnyObject) {
@@ -107,7 +99,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         myCard = cards[indexPath.row]
         performSegueWithIdentifier("goToViewCard", sender: myCard)
         
-    
     }
     
     //to replace later with the segue that goes to viewer
@@ -118,7 +109,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 
                 FinishedViewVC.cards = cardPicked
                 
-             
             }
         }
       

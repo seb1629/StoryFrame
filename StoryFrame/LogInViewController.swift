@@ -15,13 +15,11 @@ class LogInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
     }
 
     override func viewWillAppear(animated: Bool) {
         navigationController?.navigationBarHidden = true
     }
-    
     
     @IBAction func onButtonPressed(sender: UIButton) {
         animationView.startCanvasAnimation()

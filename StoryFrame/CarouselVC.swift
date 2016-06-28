@@ -10,7 +10,6 @@ import UIKit
 import CoreData
 
 class CarouselVC: UIViewController, iCarouselDelegate, iCarouselDataSource{
-
     
     var fetchedResultsController: NSFetchedResultsController!
     var cardSaved = [Card]()
@@ -18,15 +17,12 @@ class CarouselVC: UIViewController, iCarouselDelegate, iCarouselDataSource{
     override func viewDidLoad() {
         super.viewDidLoad()
         carouselView.type = .Cylinder
-        
-        
     }
 
     override func viewWillAppear(animated: Bool) {
         fetchAndSetResults()
        carouselView.reloadData()
     }
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -46,25 +42,19 @@ class CarouselVC: UIViewController, iCarouselDelegate, iCarouselDataSource{
         } catch let err as NSError {
             print(err.debugDescription)
         }
-        
     }
     // iCarousel
     func numberOfItemsInCarousel(carousel: iCarousel) -> Int {
         return cardSaved.count
     }
-
     
     func carousel(carousel: iCarousel, viewForItemAtIndex index: Int, reusingView view: UIView?) -> UIView {
         
-        
-        
         let view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 277))
-       
-    
+
         let daCard = UIImageView(frame: CGRect(x: 0, y: 0, width: 200, height: 277))
         daCard.image = cardSaved[index].takeCardImage()
         view.addSubview(daCard)
-        
         
         return view
     }
@@ -80,6 +70,25 @@ class CarouselVC: UIViewController, iCarouselDelegate, iCarouselDataSource{
         return value
     }
     
+    func carousel(carousel: iCarousel, didSelectItemAtIndex index: Int) {
+        let myCard: Card!
+        myCard = cardSaved[index]
+        performSegueWithIdentifier("segueToDetail", sender: myCard)
+    }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "segueToDetail" {
+            if let FinishedViewVC = segue.destinationViewController as? FinishedViewVC {
+                if let cardPicked = sender as? Card {
+                    
+                    FinishedViewVC.cards = cardPicked
+                    
+                }
+            }
+        }
+    }
 
 }
+    
+
+

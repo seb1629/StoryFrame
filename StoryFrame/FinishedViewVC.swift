@@ -14,15 +14,10 @@ import Accounts
 class FinishedViewVC: UIViewController  {
     var cards: Card!
     
-    
     @IBOutlet weak var LocationLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var currentImage: UIImageView!
    
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = cards.cardTitle
@@ -33,7 +28,7 @@ class FinishedViewVC: UIViewController  {
     }
     
     func shareTapped(){
-        let vc = UIActivityViewController(activityItems: [cards], applicationActivities: [])
+        let vc = UIActivityViewController(activityItems: [cards.takeCardImage()], applicationActivities: [])
         vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
         presentViewController(vc, animated: true, completion: nil)
         

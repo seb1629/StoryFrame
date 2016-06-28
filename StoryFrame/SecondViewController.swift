@@ -72,20 +72,15 @@ class SecondViewController: UIViewController, UICollectionViewDelegate, UICollec
                 if let cardPicked = sender as? Card {
                     
                     FinishedViewVC.cards = cardPicked
-                    
-                    
                 }
             }
-            
         }
-        
     }
 
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return cards.count
     }
-    
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1

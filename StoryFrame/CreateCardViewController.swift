@@ -32,6 +32,7 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
         instructionTextView.textContainer.maximumNumberOfLines = 7
         instructionTextView.textContainer.lineBreakMode = .ByWordWrapping
     self.instructionTextView.placeholder = "Enter a Story"
+        
         setupLayer()
 //        transparentNavBar()
         customRightBarButton()
@@ -49,18 +50,14 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
         return changedText.characters.count <= 4
     }
 
-    
-    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         //instructionTextView.sizeToFit()
-        
-
+    
         dispatch_async(dispatch_get_main_queue()) {
             self.instructionTextView.scrollRangeToVisible(NSMakeRange(0, 0))
         }
     }
-
     
     @IBAction func onCancelTapped(sender: UIBarButtonItem) {
         dismissViewControllerAnimated(true, completion: nil)
@@ -69,11 +66,6 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
     @IBAction func onCameraTapped(sender: UIBarButtonItem) {
         alertPopup()
     }
-    
-   
-    
-    
-    
     
     @IBAction func nextStepPressed(sender: customBtn) {
         if titleField.text != "" && titleField.text != nil {
@@ -94,18 +86,10 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
                 vc.instructionTextViewDetail = instructionTextView.text
                 vc.titleFieldDetail = titleField.text!
                 
-                
-                
             }
         }
     }
-    
-    
-    
-    
 
-    
-    
      //Custom button navBar
     
 //    func transparentNavBar(){
@@ -127,8 +111,6 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
         self.navigationItem.rightBarButtonItem = barButton
     }
     
-    
-    
     //if I Need Shadow later - Shadow not working
     func setupLayer() {
         currentImage.layer.shadowColor = UIColor(red: shadowColor, green: shadowColor, blue: shadowColor, alpha: 1).CGColor
@@ -136,11 +118,7 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
         currentImage.layer.shadowOpacity = 0.8
         currentImage.layer.shadowRadius = 5.0
         
-        
     }
-    
-    
-    
     
     func alertPopup(){
         let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .ActionSheet)
@@ -177,7 +155,6 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
         alert.view.tintColor = UIColor(red: 101/255, green: 182/255, blue: 255/255, alpha: 1.0)
     }
     
-    
     //func for camera and Gallery
     func openTheCamera(){
         if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)){
@@ -199,13 +176,10 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
         }
     }
     
-    
     func presentTheViewControllerImgPicked(){
         self.presentViewController(imagePicker, animated: true, completion: nil)
     }
     
-   
-
     //func for imagepicker
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         
