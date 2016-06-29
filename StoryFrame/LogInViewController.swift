@@ -7,24 +7,24 @@
 //
 
 import UIKit
+import Canvas
 
 class LogInViewController: UIViewController {
 
+    @IBOutlet weak var animationView: CSAnimationView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
     }
 
     override func viewWillAppear(animated: Bool) {
         navigationController?.navigationBarHidden = true
     }
     
-    @IBAction func onCameraTapped(sender: AnyObject) {
+    @IBAction func onButtonPressed(sender: UIButton) {
+        animationView.startCanvasAnimation()
         performSegueWithIdentifier("loginSegue", sender: self)
     }
-  
-    
-
+        
 
 }

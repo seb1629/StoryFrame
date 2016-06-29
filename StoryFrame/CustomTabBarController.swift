@@ -15,7 +15,7 @@ class CustomTabBarController: UITabBarController, UINavigationControllerDelegate
         super.viewDidLoad()
         UITabBar.appearance().tintColor = UIColor.whiteColor()
         UITabBar.appearance().barTintColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        UITabBar.appearance().selectionIndicatorImage = UIImage().makeImageWithColorAndSize(themeColor, size: CGSizeMake(tabBar.frame.width/2, tabBar.frame.height))
+        UITabBar.appearance().selectionIndicatorImage = UIImage().makeImageWithColorAndSize(themeColor, size: CGSizeMake(tabBar.frame.width/3, tabBar.frame.height))
         
         
     }

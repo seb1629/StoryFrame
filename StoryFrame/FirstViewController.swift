@@ -22,7 +22,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         fetchAndSetResults()
         tableView.reloadData()
         
-        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -31,16 +30,10 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-                
         tabBarItem.selectedImage = UIImage(named: "Card Collection")!.imageWithRenderingMode(.AlwaysOriginal)
         tableView.delegate = self
         tableView.dataSource = self
        
-       
-        tableView.layoutMargins = UIEdgeInsetsZero
-        tableView.separatorInset = UIEdgeInsetsZero
-        
         tableView.emptyDataSetSource = self
         tableView.emptyDataSetDelegate = self
         tableView.tableFooterView = UIView()
@@ -55,11 +48,9 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let results = try context.executeFetchRequest(fetchRequest)
             self.cards = results as! [Card]
             
-            
         } catch let err as NSError {
             print(err.debugDescription)
         }
-        
     }
  
     @IBAction func onCreateCardTapped(sender: AnyObject) {
@@ -93,7 +84,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let post = cards[indexPath.row]
         if let cell = tableView.dequeueReusableCellWithIdentifier("postCell") as? PostTableViewCell {
             cell.configurePost(post)
-            cell.layoutMargins = UIEdgeInsetsZero
+            
             return cell
         } else {
             let cell = PostTableViewCell()
@@ -101,25 +92,45 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             return cell
         }
 }
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            let app = UIApplication.sharedApplication().delegate as! AppDelegate
+            let moc = app.managedObjectContext
+            moc.deleteObject(cards[indexPath.row])
+            app.saveContext()
+            cards.removeAtIndex(indexPath.row)
+            tableView.reloadData()
+            
+            
+        }
+    }
+    
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        let card = self.cards[indexPath.row]
-        self.performSegueWithIdentifier("goToDetail", sender: card)
+        let myCard: Card!
+        myCard = cards[indexPath.row]
+        performSegueWithIdentifier("goToViewCard", sender: myCard)
+        
     }
     
+    //to replace later with the segue that goes to viewer
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-       if segue.identifier == "goToDetail" {
-        if let detailVC = segue.destinationViewController as? detailViewController {
-            
-            detailVC.post = sender as! Card
+       if segue.identifier == "goToViewCard" {
+        if let FinishedViewVC = segue.destinationViewController as? FinishedViewVC {
+            if let cardPicked = sender as? Card {
+                
+                FinishedViewVC.cards = cardPicked
+                
+            }
         }
-        
-        
+      
         }
-
+       
         }
     
+        
+        
     
     //sample for the empty table view need to customise
     func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
@@ -149,5 +160,5 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
 //        ac.addAction(UIAlertAction(title: "Hurray", style: .Default, handler: nil))
 //        presentViewController(ac, animated: true, completion: nil)
 //    }
-    
-}
+    }
+

@@ -7,18 +7,20 @@
 //
 
 
-import UIKit
-
-extension UIImage {
-    
-    class func scaleImageToSize(img: UIImage, size: CGSize) -> UIImage {
-        UIGraphicsBeginImageContext(size)
-        
-        img.drawInRect(CGRect(origin: CGPointZero, size: size))
-        
-        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
-        
-        UIGraphicsEndImageContext()
-        return scaledImage
-    }
-}
+//import UIKit
+//
+//extension UIImage {
+//    
+//    class func scaleImageToSize(img: UIImage, size: CGSize) -> UIImage {
+//        UIGraphicsBeginImageContext(size)
+//        
+//        img.drawInRect(CGRect(origin: CGPointZero, size: size))
+//        
+//        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+//        
+//        UIGraphicsEndImageContext()
+//        return scaledImage
+//    }
+//    
+//    
+//}

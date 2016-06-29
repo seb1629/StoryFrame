@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreData
+import Photos
+
 
 
 class CreateCardViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate, UIPopoverControllerDelegate, UITextViewDelegate {
@@ -19,8 +21,8 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
     
     
     @IBOutlet weak var background: UIImageView!
-    @IBOutlet weak var styleButton: UIButton!
-    @IBOutlet weak var categoriesButton: UIButton!
+   
+    
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var instructionTextView: UITextView!
     @IBOutlet weak var currentImage: UIImageView!
@@ -31,7 +33,9 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
         instructionTextView.textContainerInset = UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 10)
         instructionTextView.textContainer.maximumNumberOfLines = 7
         instructionTextView.textContainer.lineBreakMode = .ByWordWrapping
-    self.instructionTextView.placeholder = "Enter a Story"
+        self.instructionTextView.placeholder = "Enter a Story"
+        self.instructionTextView.textColor = UIColor(red: 64/255, green: 64/255, blue: 64/255, alpha: 1.0)
+        
         setupLayer()
 //        transparentNavBar()
         customRightBarButton()
@@ -49,18 +53,14 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
         return changedText.characters.count <= 4
     }
 
-    
-    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         //instructionTextView.sizeToFit()
-        
-
+    
         dispatch_async(dispatch_get_main_queue()) {
             self.instructionTextView.scrollRangeToVisible(NSMakeRange(0, 0))
         }
     }
-
     
     @IBAction func onCancelTapped(sender: UIBarButtonItem) {
         dismissViewControllerAnimated(true, completion: nil)
@@ -70,52 +70,30 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
         alertPopup()
     }
     
-    @IBAction func onStyleBtnPressed(sender: UIButton) {
-        //insert code
-    }
-    
-    @IBAction func onCategoryBtnPressed(sender: UIButton) {
-    }
-    
-    
-    
-    
-    
-    @IBAction func createPostBtnPressed(sender: UIButton) {
+    @IBAction func nextStepPressed(sender: customBtn) {
         if titleField.text != "" && titleField.text != nil {
-            let app = UIApplication.sharedApplication().delegate as! AppDelegate
-            let context = app.managedObjectContext
-            let entity = NSEntityDescription.entityForName("Card", inManagedObjectContext: context)!
-            let card = Card(entity: entity, insertIntoManagedObjectContext: context)
-            title = titleField.text
-            card.cardTitle = titleField.text
-            card.cardDescription = instructionTextView.text
-            card.prepareCardImage(currentImage.image!)
-            
-//            titleField.hidden = true
-//            styleButton.hidden = false
-//            categoriesButton.hidden = false
-            
-            context.insertObject(card)
-            
-            do {
-                try context.save()
-                
-            }catch{
-                print("could not save the card")
-            }
-            dismissViewControllerAnimated(true, completion: nil)
-            
+        performSegueWithIdentifier("goToNextSegue", sender: self)
         } else {
-            
+            let ac = UIAlertController(title: "Title required!", message: "In order to proceed to the next step, please enter a title", preferredStyle: .Alert)
+            let cancelAction = UIAlertAction(title: "Ok", style: .Cancel) { UIAlertAction in
+                ac.dismissViewControllerAnimated(true, completion: nil)
+            }
+            ac.addAction(cancelAction)
+            presentViewController(ac, animated: true, completion: nil)
         }
-        
-        
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "goToNextSegue" {
+            if let vc = segue.destinationViewController as? detailViewController {
+                vc.currentImageDetail = currentImage.image
+                vc.instructionTextViewDetail = instructionTextView.text
+                vc.titleFieldDetail = titleField.text!
+                
+            }
         }
-            
-    
+    }
 
-    
+
     
      //Custom button navBar
     
@@ -138,8 +116,6 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
         self.navigationItem.rightBarButtonItem = barButton
     }
     
-    
-    
     //if I Need Shadow later - Shadow not working
     func setupLayer() {
         currentImage.layer.shadowColor = UIColor(red: shadowColor, green: shadowColor, blue: shadowColor, alpha: 1).CGColor
@@ -147,11 +123,7 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
         currentImage.layer.shadowOpacity = 0.8
         currentImage.layer.shadowRadius = 5.0
         
-        
     }
-    
-    
-    
     
     func alertPopup(){
         let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .ActionSheet)
@@ -188,7 +160,6 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
         alert.view.tintColor = UIColor(red: 101/255, green: 182/255, blue: 255/255, alpha: 1.0)
     }
     
-    
     //func for camera and Gallery
     func openTheCamera(){
         if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)){
@@ -210,18 +181,24 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
         }
     }
     
-    
     func presentTheViewControllerImgPicked(){
         self.presentViewController(imagePicker, animated: true, completion: nil)
     }
     
-   
-
     //func for imagepicker
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        
+        var newImage: UIImage
             imagePicker.dismissViewControllerAnimated(true, completion: nil)
-            currentImage.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+            imagePicker.allowsEditing = true
+        
+        if let possibleImage = info["UIImagePickerControllerEditedImage"] as? UIImage {
+            newImage = possibleImage
+        } else if let possibleImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            newImage = possibleImage
+        } else {
+            return
+        }
+            currentImage.image = newImage
             background.image = info[UIImagePickerControllerOriginalImage] as? UIImage
         }
     
