@@ -14,7 +14,7 @@ import UIKit
 class Card: NSManagedObject {
 
     func prepareCardImage(img: UIImage){
-        let data = UIImagePNGRepresentation(img)
+        let data = UIImageJPEGRepresentation(img, 0.7)
         self.cardImage = data
     }
     

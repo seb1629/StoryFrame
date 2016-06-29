@@ -92,6 +92,19 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             return cell
         }
 }
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            let app = UIApplication.sharedApplication().delegate as! AppDelegate
+            let moc = app.managedObjectContext
+            moc.deleteObject(cards[indexPath.row])
+            app.saveContext()
+            cards.removeAtIndex(indexPath.row)
+            tableView.reloadData()
+            
+            
+        }
+    }
+    
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)

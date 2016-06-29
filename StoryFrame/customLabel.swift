@@ -24,11 +24,11 @@ class customLabel: UILabel {
     
     override func drawRect(rect: CGRect) {
         super.drawRect(rect)
-        self.layer.shadowColor = UIColor.blackColor().CGColor
+        self.layer.shadowColor = UIColor(red: 157/255, green: 157/255, blue: 157/255, alpha: 0.6).CGColor
         
         self.layer.shadowOffset = CGSizeMake(0, 2)
         self.layer.shadowOpacity = 0.8
-        self.layer.shadowRadius = 5.0
+        self.layer.shadowRadius = 2.0
         
     }
 }

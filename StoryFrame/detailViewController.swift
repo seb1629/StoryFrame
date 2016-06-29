@@ -12,7 +12,10 @@ import CoreData
 class detailViewController: UIViewController {
 
     
+   
+  
     
+    @IBOutlet weak var styleBtn: UIButton!
     
      var titleFieldDetail = ""
      var instructionTextViewDetail = ""
@@ -26,6 +29,7 @@ class detailViewController: UIViewController {
     @IBOutlet weak var descLabel: UILabel!
     @IBOutlet weak var topView: UIView!
     
+    var isMenuOpen = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,11 +44,13 @@ class detailViewController: UIViewController {
         bgImage.image = currentImageDetail
         descLabel.text = instructionTextViewDetail
         navigationItem.title = titleFieldDetail
-        topView.backgroundColor = UIColor(white: 1, alpha: 0.6)
-        descLabel.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
+        topView.backgroundColor = UIColor(white: 1, alpha: 1)
+        descLabel.backgroundColor = UIColor(white: 1.0, alpha: 0.6)
         descLabel.textColor = UIColor.darkGrayColor()
-    
+        frontImage.layer.borderWidth = 1
+        frontImage.layer.borderColor = UIColor(red: 64/255, green: 64/255, blue: 64/255, alpha: 0.6).CGColor
     }
+    
     
     func saveTapped(){
         
@@ -54,7 +60,7 @@ class detailViewController: UIViewController {
             let card = Card(entity: entity, insertIntoManagedObjectContext: context)
             card.cardTitle = navigationItem.title
             card.cardDescription = descLabel.text
-        card.prepareCardImage(screenShot())
+            card.prepareCardImage(screenShot())
             context.insertObject(card)
             
             do {
@@ -72,8 +78,8 @@ class detailViewController: UIViewController {
     }
    
     @IBAction func onStylePressed(sender: UIButton) {
-        
-    }
+       styleBtn.setTitle("Done", forState: .Highlighted)
+            }
 
     func transparentNavBar(){
                 let bar: UINavigationBar! = self.navigationController?.navigationBar
@@ -81,6 +87,7 @@ class detailViewController: UIViewController {
                 bar.shadowImage = UIImage()
                 bar.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.30)
                 }
+    
     func screenShot() -> UIImage {
         UIGraphicsBeginImageContextWithOptions(CGSizeMake(375,565), false, 0)
         self.view.drawViewHierarchyInRect(CGRectMake(0,-93,view.bounds.size.width,view.bounds.size.height - 10),afterScreenUpdates: true)
@@ -90,4 +97,7 @@ class detailViewController: UIViewController {
         
         return image
     }
+    
+   
+    
 }

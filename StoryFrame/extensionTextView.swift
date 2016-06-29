@@ -60,10 +60,10 @@ extension UITextView: UITextViewDelegate {
         let placeholderLabel = UILabel()
         placeholderLabel.text = placeholderText
         placeholderLabel.sizeToFit()
-        placeholderLabel.frame.origin.x = 5.0
+        placeholderLabel.frame.origin.x = 12.0
         placeholderLabel.frame.origin.y = 5.0
         placeholderLabel.font = self.font
-        placeholderLabel.textColor = UIColor.lightGrayColor()
+        placeholderLabel.textColor = UIColor(red: 64/255, green: 64/255, blue: 64/255, alpha: 1.0)
         placeholderLabel.tag = 100
         
         // Hide the label if there is text in the text view

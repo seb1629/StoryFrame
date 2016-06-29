@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreData
+import Photos
+
 
 
 class CreateCardViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate, UIPopoverControllerDelegate, UITextViewDelegate {
@@ -31,7 +33,8 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
         instructionTextView.textContainerInset = UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 10)
         instructionTextView.textContainer.maximumNumberOfLines = 7
         instructionTextView.textContainer.lineBreakMode = .ByWordWrapping
-    self.instructionTextView.placeholder = "Enter a Story"
+        self.instructionTextView.placeholder = "Enter a Story"
+        self.instructionTextView.textColor = UIColor(red: 64/255, green: 64/255, blue: 64/255, alpha: 1.0)
         
         setupLayer()
 //        transparentNavBar()
@@ -90,6 +93,8 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
         }
     }
 
+
+    
      //Custom button navBar
     
 //    func transparentNavBar(){
@@ -182,9 +187,18 @@ class CreateCardViewController: UIViewController, UIImagePickerControllerDelegat
     
     //func for imagepicker
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        
+        var newImage: UIImage
             imagePicker.dismissViewControllerAnimated(true, completion: nil)
-            currentImage.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+            imagePicker.allowsEditing = true
+        
+        if let possibleImage = info["UIImagePickerControllerEditedImage"] as? UIImage {
+            newImage = possibleImage
+        } else if let possibleImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            newImage = possibleImage
+        } else {
+            return
+        }
+            currentImage.image = newImage
             background.image = info[UIImagePickerControllerOriginalImage] as? UIImage
         }
     

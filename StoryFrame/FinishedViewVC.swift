@@ -9,10 +9,12 @@
 import UIKit
 import Social
 import Accounts
-
+import CoreData
 
 class FinishedViewVC: UIViewController  {
     var cards: Card!
+    
+    @IBOutlet weak var topView: UIView!
     
     @IBOutlet weak var LocationLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -23,9 +25,24 @@ class FinishedViewVC: UIViewController  {
         navigationItem.title = cards.cardTitle
       
         currentImage.image = cards.takeCardImage()
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: #selector(shareTapped))
-                
+        topView.backgroundColor = UIColor(white: 1, alpha: 1)
+         navigationController?.navigationBarHidden = false
     }
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.hidesBarsOnTap = true
+       
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.hidesBarsOnTap = false
+    }
+  
     
     func shareTapped(){
         let vc = UIActivityViewController(activityItems: [cards.takeCardImage()], applicationActivities: [])
@@ -34,12 +51,15 @@ class FinishedViewVC: UIViewController  {
         
     }
     
-    override func viewWillAppear(animated: Bool) {
-        
-    }
     
+    
+
     
     @IBAction func deleteTapped(sender: UIButton) {
+        let app = UIApplication.sharedApplication().delegate as! AppDelegate
+        let moc = app.managedObjectContext
+        moc.deleteObject(cards)
+        app.saveContext()
         
     }
     
